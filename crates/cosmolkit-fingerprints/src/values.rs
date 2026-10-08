@@ -348,6 +348,17 @@ impl Fingerprint {
         Ok(())
     }
 
+    /// Count shared set bits without materializing an intersection vector.
+    pub(crate) fn num_on_bits_in_common(&self, other: &Self) -> Result<u32, FingerprintError> {
+        self.same_length(other)?;
+        Ok(self
+            .words
+            .iter()
+            .zip(&other.words)
+            .map(|(&a, &b)| (a & b).count_ones())
+            .fold(0u32, |count, word_count| count + word_count))
+    }
+
     /// Bitwise AND of two equal-length vectors.
     ///
     /// Source: `ExplicitBitVect ExplicitBitVect::operator&(const

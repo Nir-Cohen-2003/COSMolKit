@@ -57,7 +57,7 @@ pub fn num_on_bits_in_common(a: &Fingerprint, b: &Fingerprint) -> Result<u32, Fi
             what: "no afp (CalcBitmapNumBitsInCommon on zero-length vector)",
         });
     }
-    Ok(a.and(b)?.num_on_bits())
+    a.num_on_bits_in_common(b)
 }
 
 /// `NumOnBitsInCommon<SparseBitVect>` — the generic template (BitOps.cpp
@@ -1712,6 +1712,71 @@ const fn tanimoto_totals(y: u32, z: u32) -> u32 {
 /// (`total - common`, BitOps.cpp:296). See [`tanimoto_totals`].
 const fn tanimoto_denominator(total: u32, common: u32) -> u32 {
     total.wrapping_sub(common)
+}
+
+#[cfg(test)]
+mod packed_tanimoto_tests {
+    use crate::{Fingerprint, FingerprintError};
+
+    use super::{num_on_bits_in_common, tanimoto};
+
+    fn fingerprint(n_bits: u32, set_bits: &[u32]) -> Fingerprint {
+        let mut fingerprint = Fingerprint::new(n_bits);
+        for &bit in set_bits {
+            fingerprint.set_bit(bit).unwrap();
+        }
+        fingerprint
+    }
+
+    #[test]
+    fn packed_common_count_matches_bit_reference_across_word_boundaries() {
+        for n_bits in [1, 63, 64, 65, 127, 128, 129] {
+            let left_bits: Vec<_> = (0..n_bits).filter(|bit| bit % 3 == 0).collect();
+            let right_bits: Vec<_> = (0..n_bits).filter(|bit| bit % 5 <= 1).collect();
+            let left = fingerprint(n_bits, &left_bits);
+            let right = fingerprint(n_bits, &right_bits);
+            let expected = (0..n_bits)
+                .filter(|&bit| left.get_bit(bit).unwrap() && right.get_bit(bit).unwrap())
+                .count() as u32;
+
+            assert_eq!(num_on_bits_in_common(&left, &right).unwrap(), expected);
+            let total = left.num_on_bits().wrapping_add(right.num_on_bits());
+            let expected_score = if total == 0 {
+                0.0
+            } else {
+                f64::from(expected) / f64::from(total.wrapping_sub(expected))
+            };
+            assert_eq!(tanimoto(&left, &right).unwrap(), expected_score);
+        }
+    }
+
+    #[test]
+    fn packed_common_count_and_tanimoto_preserve_mismatch_and_zero_cases() {
+        let empty = Fingerprint::empty();
+        assert_eq!(
+            num_on_bits_in_common(&empty, &empty),
+            Err(FingerprintError::PreconditionViolation {
+                what: "no afp (CalcBitmapNumBitsInCommon on zero-length vector)"
+            })
+        );
+        assert_eq!(tanimoto(&empty, &empty).unwrap(), 0.0);
+
+        let one_empty = fingerprint(1, &[]);
+        let two_empty = fingerprint(2, &[]);
+        assert_eq!(
+            num_on_bits_in_common(&one_empty, &two_empty),
+            Err(FingerprintError::BitLengthMismatch { left: 1, right: 2 })
+        );
+        assert_eq!(
+            tanimoto(&one_empty, &two_empty),
+            Err(FingerprintError::BitLengthMismatch { left: 1, right: 2 })
+        );
+
+        let one_set = fingerprint(65, &[64]);
+        let one_clear = fingerprint(65, &[]);
+        assert_eq!(num_on_bits_in_common(&one_set, &one_clear).unwrap(), 0);
+        assert_eq!(tanimoto(&one_set, &one_clear).unwrap(), 0.0);
+    }
 }
 
 #[cfg(test)]
