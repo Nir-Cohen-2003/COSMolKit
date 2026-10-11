@@ -1,0 +1,43 @@
+[workspace]
+authors = ["Nir <<>>"]
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+preview=["pixi-build"]
+
+[package]
+name = "COSMolKit"
+version = "0.6.0"
+[package.build]
+source = { path = "python" }
+
+[package.build.config]
+compilers = ["rust"]
+noarch = false
+extra-input-globs = [
+    "../Cargo.toml*",
+    "../Cargo.lock*",
+    "../README.md*",
+    "../.cargo/**/*",
+    "../crates/**/*",
+    "../wasm/**/*",
+    "../parity-tests/**/*",
+    "../parity-tests_fixed/**/*",
+]
+
+[package.build.backend]
+channels = ["https://prefix.dev/conda-forge"]
+name = "pixi-build-python"
+version = "*"
+
+[package.host-dependencies]
+maturin = ">=1.9.4,<2.0"
+python = ">=3.12"
+uv = "*"
+setuptools = "*"
+
+[package.run-dependencies]
+python = ">=3.12"
+numpy = ">=1.23"
+[tasks]
+
+[dependencies]

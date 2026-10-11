@@ -42,6 +42,24 @@ From repo root:
 .venv/bin/maturin build --release --manifest-path python/Cargo.toml --features release-abi3-py39 --out python/dist
 ```
 
+## Build a Conda package with Pixi
+
+From repo root, with Pixi 0.81.0 (the tested version) and the `pixi-build` preview enabled:
+
+```bash
+pixi build --path pixi.toml --output-dir /tmp/cosmolkit-pixi-dist
+```
+
+This builds a local native Conda artifact; it does not upload it and does not
+replace the maturin wheel workflow above. The root Pixi package selects
+`python/` as its source, where `python/pyproject.toml` delegates the PEP 517
+build to maturin using the existing `release-abi3-py39` feature. Building
+requires the complete Rust workspace and sibling crate sources, including the
+root Cargo manifest; a copy of `python/` alone is not a sufficient build
+source. The configured Conda package is scoped to `linux-64` and Python
+`>=3.12`. Its Conda identity remains `COSMolKit` version `0.6.0`; the embedded
+Python distribution metadata remains `cosmolkit` version `0.5.0rc15`.
+
 ## Build Python Documentation
 
 From repo root:
