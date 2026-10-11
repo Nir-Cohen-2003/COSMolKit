@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "cosmolkit_msready_v1",
+  "behavior_commitment": "Native",
+  "source_zip_sha256": "042516c36088ffa8b9e9ae8e6e2e9154188cdb790c8ac3c510643bb7b01acc5c",
+  "default_max_edits_per_input": 1024,
+  "default_max_matches_per_sweep": 4096,
+  "selection": "re-match after every accepted graph edit; choose the lexicographically least valid next canonical isotope-preserving, stereo/map-free graph; input rows break ties only for equal canonical graphs",
+  "invariants": [
+    "no atom or substituent is removed",
+    "charge, isotope, radical, formula and total-H accounting is checked after each edit",
+    "atom and bond maps are composed from original input rows",
+    "strict selected validation runs after the complete six-appearance fixed-point sweep, so multiple neutral nitro centers are repaired first"
+  ],
+  "appearances": [
+    {
+      "appearance_id": "initial_nitro:03:03",
+      "rule_id": "nitro_initial",
+      "order": 1,
+      "source_path": "workflow_configuration/Tauto_Neut (#3652)/N mesos (#3406)/Table Creator (#2133)/settings.xml",
+      "source_sha256": "120847c464cf0ffd4899c088ec8a3a808d53b51e374cdbc32f8a70c9c5038a6e",
+      "source_entry": "[*]N(=O)=O&gt;&gt;[O-][N+]([*])=O",
+      "match": {
+        "atoms": ["N(formal_charge=0 or guarded +1, nonaromatic, nonradical)", "O(terminal, isotope-preserved)", "O(terminal, isotope-preserved)", "one definite non-H R attachment"],
+        "bonds": ["neutral N: two N=O; charged N+: one N=O and one N-O-", "N-R single"],
+        "guards": ["N has no H", "O are terminal nonaromatic nonradicals with no H; neutral input has two neutral O, charged input has one neutral double O and one single O-", "all atoms and bonds are concrete; query and wildcard states rejected"]
+      },
+      "edits": ["N charge 0->+1", "choose one N=O role as N-O single and O charge 0->-1", "retain the other N=O"],
+      "selection_adaptation": "enumerate both O roles; choose canonical isotope-preserving product graph; already charged forms change only on canonical improvement and selected forms are no-ops; never select by input atom row",
+      "accounting": "formula/isotope/H/radical and net charge unchanged"
+    },
+    {
+      "appearance_id": "enamine_to_imine:01:01",
+      "rule_id": "enamine_to_imine",
+      "order": 2,
+      "source_path": "mrv/Tauto_Neut (#3652)__Metanode (#3383)__MarvinSketch (#3381).mrv",
+      "source_sha256": "6b9e65c06cfd0dcf5bd391f64f63c9dfc0205a0087fec32bb90b551825a9724f",
+      "source_reactant_roles": {"a1": "C alpha bonded to N", "a2": "N donor", "a3": "R on C alpha", "a4": "C beta receiving H", "a5": "R on C beta", "a6": "R on N", "a7": "second R on C beta", "a8": "transferred H"},
+      "source_product_correspondence": {"a1": "N from reactant a2", "a2": "C alpha from reactant a1", "a3": "R1 from reactant a3", "a4": "C beta from reactant a4", "a5": "R2 from reactant a5", "a6": "R3 from reactant a6", "a7": "R4 from reactant a7"},
+      "match": {"atoms": ["N donor", "C alpha", "adjacent C beta"], "bonds": ["N-C alpha single", "C alpha=C beta double"], "guards": ["all three centers neutral, nonaromatic and nonradical", "N neutral with a transferable H and a preserved R slot (a concrete branch or another owner-assigned H)", "alpha C retains one R slot, filled by a preserved concrete branch or owner-assigned H", "beta C retains two R slots, filled by preserved concrete branches or owner-assigned H (Native adaptation)", "non-core attachments remain definite single bonds", "no query/wildcard bonds"]},
+      "edits": ["C alpha=C beta double->single", "N-C alpha single->double", "transfer one N-bound H carrier to C beta"],
+      "accounting": "donor H -1, C beta H +1; net formula/charge/isotopes/radicals unchanged"
+    },
+    {
+      "appearance_id": "enol_to_carbonyl:01:01",
+      "rule_id": "enol_to_carbonyl",
+      "order": 3,
+      "source_path": "mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2253).mrv",
+      "source_sha256": "26c8b16905fc41235cb9a63b4fffcab237b5952774f0d17144107d6b84ab28a9",
+      "source_reactant_roles": {"a1": "R on C beta", "a2": "C beta", "a3": "R on C alpha", "a4": "C alpha bonded to O", "a5": "O donor", "a6": "R on C beta", "a7": "transferred H"},
+      "source_product_correspondence": {"a1": "O from reactant a5", "a2": "C alpha from reactant a4", "a3": "R3 from reactant a3", "a4": "C beta from reactant a2", "a5": "R2 from reactant a6", "a6": "R1 from reactant a1"},
+      "match": {"atoms": ["C beta", "C alpha", "O donor"], "bonds": ["C beta=C alpha double", "C alpha-O single"], "guards": ["all centers neutral, nonaromatic and nonradical", "O neutral and total H exactly 1", "O has no other heavy neighbor", "alpha C retains one R slot, filled by a preserved concrete branch or owner-assigned H", "beta C retains two R slots, filled by preserved concrete branches or owner-assigned H (Native adaptation)", "non-core attachments remain definite single bonds"]},
+      "edits": ["C beta=C alpha double->single", "C alpha-O single->double on the same mapped atom pair", "transfer one O-bound H carrier to C beta"],
+      "accounting": "donor O H -1, C beta H +1; net formula/charge/isotopes/radicals unchanged"
+    },
+    {
+      "appearance_id": "ynol_to_ketene:01:01",
+      "rule_id": "ynol_to_ketene",
+      "order": 4,
+      "source_path": "mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2136).mrv",
+      "source_sha256": "48379a213859aa8d27ef975d23bb1ba9ed0d2441bede8e7f8dd69858ef022bcc",
+      "source_reactant_roles": {"a1": "C central bonded to O", "a2": "O donor", "a3": "R mapped to a concrete distal C", "a4": "transferred H"},
+      "source_product_correspondence": {"a1": "O", "a2": "C central", "a3": "distal C"},
+      "match": {"atoms": ["O donor", "central C", "concrete distal C"], "bonds": ["O-central C single", "central C-distal C triple"], "guards": ["all centers neutral, nonaromatic and nonradical", "O neutral and total H exactly 1", "R endpoint is an actual C atom, not wildcard/template query", "central C has only the two core heavy neighbors"]},
+      "edits": ["O-central C single->double", "central C-distal C triple->double", "transfer one O-bound H carrier to distal C"],
+      "accounting": "donor O H -1, distal C H +1; net formula/charge/isotopes/radicals unchanged"
+    },
+    {
+      "appearance_id": "azide_mesomer:01:01",
+      "rule_id": "azide_mesomer",
+      "order": 5,
+      "source_path": "mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2256).mrv",
+      "source_sha256": "af6ad0c4d042311cac4834f00950fe96e53c8da53ae06c2768c78047f6291458",
+      "source_reactant_roles": {"a1": "terminal N- attached to R and N+", "a2": "central N+", "a3": "distal neutral N", "a4": "definite R attachment"},
+      "source_product_correspondence": {"a1": "terminal neutral N", "a2": "central N+", "a3": "distal N-", "a4": "same R attachment"},
+      "match": {"atoms": ["N1 charge -1", "N2 charge +1", "N3 charge 0", "one definite R neighbor on N1"], "bonds": ["N1-N2 single", "N2-N3 triple", "N1-R single"], "guards": ["all N centers nonaromatic and nonradical", "N2 has only N1/N3 neighbors", "N3 terminal", "no N-bound H", "all graph state definite"]},
+      "edits": ["N1 charge -1->0", "N3 charge 0->-1", "N1-N2 single->double", "N2-N3 triple->double"],
+      "accounting": "formula/isotope/H/radical and net charge unchanged"
+    },
+    {
+      "appearance_id": "final_nitro:03:03",
+      "rule_id": "nitro_final",
+      "order": 6,
+      "source_path": "workflow_configuration/Tauto_Neut (#3652)/N mesos (#3430)/Table Creator (#2158)/settings.xml",
+      "source_sha256": "52e77e915133920e6d7ac35968b5a69d493df16e50a95499801068fb924dc528",
+      "source_entry": "[*]N(=O)=O&gt;&gt;[O-][N+]([*])=O",
+      "same_query_and_edits_as": "nitro_initial",
+      "accounting": "formula/isotope/H/radical and net charge unchanged"
+    }
+  ]
+}

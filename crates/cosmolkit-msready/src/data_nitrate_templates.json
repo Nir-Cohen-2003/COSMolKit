@@ -1,0 +1,53 @@
+{
+  "adaptation_id": "nitrate_comparison_charge_adaptation_v1",
+  "schema_version": "1.0.0",
+  "source_field": "CANONICAL_SMILES",
+  "source_formula": "H2NO3",
+  "source_id": "83",
+  "source_net_charge": 0,
+  "source_smiles": "ON(=O)O",
+  "source_to_template_metadata": {
+    "is_component_edit": false,
+    "raw_to_acid": {
+      "delta_h": -1,
+      "delta_n_charge": 1,
+      "delta_net_charge": 0,
+      "delta_single_o_charge": -1
+    },
+    "raw_to_nitrate": {
+      "delta_h": -2,
+      "delta_n_charge": 1,
+      "delta_net_charge": -1,
+      "delta_single_o_charge": -1
+    }
+  },
+  "templates": [
+    {
+      "adaptation_id": null,
+      "comparison_only": true,
+      "formula": "H2NO3",
+      "net_charge": 0,
+      "smiles": "ON(=O)O",
+      "status": "source_verbatim_exclusion_only",
+      "template_id": "83_raw_h2no3"
+    },
+    {
+      "adaptation_id": "nitrate_comparison_charge_adaptation_v1",
+      "comparison_only": true,
+      "formula": "HNO3",
+      "net_charge": 0,
+      "smiles": "[OH][N+](=O)[O-]",
+      "status": "adopted_comparison_template",
+      "template_id": "83_nitric_acid"
+    },
+    {
+      "adaptation_id": "nitrate_comparison_charge_adaptation_v1",
+      "comparison_only": true,
+      "formula": "NO3",
+      "net_charge": -1,
+      "smiles": "[O-][N+](=O)[O-]",
+      "status": "adopted_comparison_template",
+      "template_id": "83_nitrate"
+    }
+  ]
+}

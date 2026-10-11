@@ -5283,6 +5283,33 @@ pub fn exact_molecular_weight_with_valence(
     Ok(result)
 }
 
+/// Calculates exact molecular formula mass without the formal-charge electron correction.
+///
+/// This reuses the existing exact-mass kernel, then restores the electron mass
+/// adjustment for the checked total formal charge. A supplied valence assignment
+/// is borrowed by the exact-mass kernel and is required for implicit-H accounting.
+pub fn neutral_atom_exact_mass_with_valence(
+    topology: &TopologyBlock,
+    assignment: Option<&cosmolkit_core::ValenceAssignment>,
+) -> DescriptorResult<f64> {
+    // RDKit source exact-mass kernel subtracts one electron mass per formal charge:
+    // RDKit❗✔️:     res -= constants::electronMass * atom->getFormalCharge();
+    // The MSReady formula-mass contract reverses that aggregate ionic correction,
+    // leaving the neutral-atom masses while preserving the kernel's isotope/H logic.
+    validate_topology(topology, "neutral_atom_exact_mass")?;
+    let mut total_charge = 0_i32;
+    for atom in &topology.atoms {
+        total_charge = total_charge
+            .checked_add(i32::from(atom.formal_charge()))
+            .ok_or(DescriptorError::CountOverflow {
+                function: "neutral_atom_exact_mass",
+                field: "formal_charge",
+            })?;
+    }
+    let exact_mass = exact_molecular_weight_with_valence(topology, false, assignment)?;
+    Ok(exact_mass + RDKIT_ELECTRON_MASS * f64::from(total_charge))
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 struct FormulaKey {
     isotope: u32,
@@ -5473,6 +5500,67 @@ mod tests {
         assert_eq!(molecular_formula(&topology).unwrap(), "C2H6O");
         assert!((molecular_weight(&topology).unwrap() - 46.069).abs() < 1e-9);
         assert!((exact_molecular_weight(&topology).unwrap() - 46.041864812).abs() < 1e-9);
+    }
+
+    #[test]
+    fn neutral_atom_exact_mass_covers_charge_isotopes_and_implicit_hydrogens() {
+        let cases = [
+            ("CCO", 0_i32),
+            ("[NH4+]", 1),
+            ("[OH-]", -1),
+            ("[O-]S(=O)(=O)[O-]", -2),
+            ("[13CH4]", 0),
+            ("[13CH3+]", 1),
+        ];
+        for (smiles, charge) in cases {
+            let topology = smiles_topology(smiles);
+            let assignment = valence(&topology, "neutral_atom_exact_mass_test").unwrap();
+            let exact_before =
+                exact_molecular_weight_with_valence(&topology, false, Some(&assignment)).unwrap();
+            let neutral =
+                neutral_atom_exact_mass_with_valence(&topology, Some(&assignment)).unwrap();
+            assert_eq!(
+                neutral,
+                exact_before + RDKIT_ELECTRON_MASS * f64::from(charge),
+                "neutral-atom correction for {smiles}"
+            );
+            assert!((neutral - exact_before).abs() < 2.0 * RDKIT_ELECTRON_MASS + 1e-12);
+        }
+
+        let ethanol = smiles_topology("CCO");
+        let assignment = valence(&ethanol, "neutral_atom_exact_mass_test").unwrap();
+        assert!(
+            (neutral_atom_exact_mass_with_valence(&ethanol, Some(&assignment)).unwrap()
+                - 46.041864812)
+                .abs()
+                < 1e-9
+        );
+    }
+
+    #[test]
+    fn neutral_atom_exact_mass_preserves_existing_ionic_exact_mass_semantics() {
+        let ammonium = smiles_topology("[NH4+]");
+        let hydroxide = smiles_topology("[OH-]");
+        let ammonium_assignment = valence(&ammonium, "ionic_exact_mass_regression").unwrap();
+        let hydroxide_assignment = valence(&hydroxide, "ionic_exact_mass_regression").unwrap();
+        let ammonium_exact =
+            exact_molecular_weight_with_valence(&ammonium, false, Some(&ammonium_assignment))
+                .unwrap();
+        let hydroxide_exact =
+            exact_molecular_weight_with_valence(&hydroxide, false, Some(&hydroxide_assignment))
+                .unwrap();
+        assert!(
+            (ammonium_exact - (14.003074 + 4.0 * 1.007825032 - RDKIT_ELECTRON_MASS)).abs() < 1e-9
+        );
+        assert!((hydroxide_exact - (15.99491462 + 1.007825032 + RDKIT_ELECTRON_MASS)).abs() < 1e-9);
+        assert_ne!(
+            neutral_atom_exact_mass_with_valence(&ammonium, Some(&ammonium_assignment)).unwrap(),
+            ammonium_exact
+        );
+        assert_ne!(
+            neutral_atom_exact_mass_with_valence(&hydroxide, Some(&hydroxide_assignment)).unwrap(),
+            hydroxide_exact
+        );
     }
 
     #[test]

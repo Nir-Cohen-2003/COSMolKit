@@ -1,0 +1,220 @@
+{
+  "files": [
+    {
+      "bytes": 31668,
+      "path": "fixtures/native_discarded_sample.csv",
+      "sha256": "4f39ec1238f3715c86c4c0d5b90a89520668266fb39523d1145f5e65e70bb8c5",
+      "source": {
+        "path": "sample_output/Sample_input_DiscardedStructures.csv",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "4f39ec1238f3715c86c4c0d5b90a89520668266fb39523d1145f5e65e70bb8c5",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/Sample_output.zip"
+      }
+    },
+    {
+      "bytes": 1954,
+      "path": "fixtures/native_sample_selection.json",
+      "sha256": "dbde31e6ed0e23fa9d4fcdb653a389412074799aad9d375eae29224d06c17b76",
+      "source": {
+        "path": "sample_input/Sample_input.smi",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "8ed7c503e7dfcf315e75a9d05300a4a9c6801ba5e50280cab2b8c52a37101f73",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/Sample_input.zip"
+      }
+    },
+    {
+      "bytes": 369,
+      "path": "fixtures/native_sample_selection.smi",
+      "sha256": "59136629f9e43f81fff13cf9d1af8def237018fbdc4cfe52603efda3fca7a837",
+      "source": {
+        "path": "sample_input/Sample_input.smi",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "8ed7c503e7dfcf315e75a9d05300a4a9c6801ba5e50280cab2b8c52a37101f73",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/Sample_input.zip"
+      }
+    },
+    {
+      "bytes": 1401,
+      "path": "fixtures/nitrate_templates.json",
+      "sha256": "a73adc8cc780c2ddf8cb94c09ff7cb7c5c043fb0a6e2e450830f27284cf1bbb2",
+      "source": {
+        "path": "exclusion_list_v2_5_8.json#ID=83",
+        "sha256": "5b11ff6fbffb5ee0169e73c9428d85344598eac33a76b4e96b8aad06e93c4322"
+      }
+    },
+    {
+      "bytes": 3864,
+      "path": "fixtures/source/README.txt",
+      "sha256": "f44258c497d7d336521b2b6da925522402bb64253f8ac7856fd67eaf6b51b00b",
+      "source": {
+        "path": "README.txt",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "f44258c497d7d336521b2b6da925522402bb64253f8ac7856fd67eaf6b51b00b",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    },
+    {
+      "bytes": 45811,
+      "path": "fixtures/source/connected_rule_inventory.json",
+      "sha256": "0af8ccc21dab67de684023efe73b122c78f84b811f55431790f59ba866036a53",
+      "source": {
+        "path": "connected_rule_inventory.json",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "0af8ccc21dab67de684023efe73b122c78f84b811f55431790f59ba866036a53",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    },
+    {
+      "bytes": 1688,
+      "path": "fixtures/source/exclusion_list_v2_5_8.csv",
+      "sha256": "0d17cba4fd2abe42c7faf4224fdcf533f270358928640dc4064c1496f9068071",
+      "source": {
+        "path": "exclusion_list_v2_5_8.csv",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "0d17cba4fd2abe42c7faf4224fdcf533f270358928640dc4064c1496f9068071",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    },
+    {
+      "bytes": 6482,
+      "path": "fixtures/source/exclusion_list_v2_5_8.json",
+      "sha256": "5b11ff6fbffb5ee0169e73c9428d85344598eac33a76b4e96b8aad06e93c4322",
+      "source": {
+        "path": "exclusion_list_v2_5_8.json",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "5b11ff6fbffb5ee0169e73c9428d85344598eac33a76b4e96b8aad06e93c4322",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    },
+    {
+      "bytes": 1243,
+      "path": "fixtures/source/mrv/Metanode (#1222)__MarvinSketch (#2131).mrv",
+      "sha256": "81a8813b374a5b7f9997addac27a022d1f98e2c9d7cb0b46e595d6156b51eb1f",
+      "source": {
+        "path": "mrv/Metanode (#1222)__MarvinSketch (#2131).mrv",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "81a8813b374a5b7f9997addac27a022d1f98e2c9d7cb0b46e595d6156b51eb1f",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    },
+    {
+      "bytes": 1245,
+      "path": "fixtures/source/mrv/Metanode (#1222)__MarvinSketch (#2135).mrv",
+      "sha256": "551ede15d62ba8a13b700ae937344a1e5512c64737d4594369927a279f758c5b",
+      "source": {
+        "path": "mrv/Metanode (#1222)__MarvinSketch (#2135).mrv",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "551ede15d62ba8a13b700ae937344a1e5512c64737d4594369927a279f758c5b",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    },
+    {
+      "bytes": 1245,
+      "path": "fixtures/source/mrv/Metanode (#1222)__MarvinSketch (#2136).mrv",
+      "sha256": "53bdbfaa7e9a514a2d1d60fc848a9303c18cfe4842bf9454593ca574c53c37dd",
+      "source": {
+        "path": "mrv/Metanode (#1222)__MarvinSketch (#2136).mrv",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "53bdbfaa7e9a514a2d1d60fc848a9303c18cfe4842bf9454593ca574c53c37dd",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    },
+    {
+      "bytes": 2850,
+      "path": "fixtures/source/mrv/Tauto_Neut (#3652)__Metanode (#3383)__MarvinSketch (#3381).mrv",
+      "sha256": "6b9e65c06cfd0dcf5bd391f64f63c9dfc0205a0087fec32bb90b551825a9724f",
+      "source": {
+        "path": "mrv/Tauto_Neut (#3652)__Metanode (#3383)__MarvinSketch (#3381).mrv",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "6b9e65c06cfd0dcf5bd391f64f63c9dfc0205a0087fec32bb90b551825a9724f",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    },
+    {
+      "bytes": 1594,
+      "path": "fixtures/source/mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2136).mrv",
+      "sha256": "48379a213859aa8d27ef975d23bb1ba9ed0d2441bede8e7f8dd69858ef022bcc",
+      "source": {
+        "path": "mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2136).mrv",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "48379a213859aa8d27ef975d23bb1ba9ed0d2441bede8e7f8dd69858ef022bcc",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    },
+    {
+      "bytes": 2527,
+      "path": "fixtures/source/mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2253).mrv",
+      "sha256": "26c8b16905fc41235cb9a63b4fffcab237b5952774f0d17144107d6b84ab28a9",
+      "source": {
+        "path": "mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2253).mrv",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "26c8b16905fc41235cb9a63b4fffcab237b5952774f0d17144107d6b84ab28a9",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    },
+    {
+      "bytes": 1808,
+      "path": "fixtures/source/mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2256).mrv",
+      "sha256": "af6ad0c4d042311cac4834f00950fe96e53c8da53ae06c2768c78047f6291458",
+      "source": {
+        "path": "mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2256).mrv",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "af6ad0c4d042311cac4834f00950fe96e53c8da53ae06c2768c78047f6291458",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    },
+    {
+      "bytes": 4224,
+      "path": "fixtures/source/workflow_configuration/Tauto_Neut (#3652)/N mesos (#3406)/Table Creator (#2133)/settings.xml",
+      "sha256": "120847c464cf0ffd4899c088ec8a3a808d53b51e374cdbc32f8a70c9c5038a6e",
+      "source": {
+        "path": "workflow_configuration/Tauto_Neut (#3652)/N mesos (#3406)/Table Creator (#2133)/settings.xml",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "120847c464cf0ffd4899c088ec8a3a808d53b51e374cdbc32f8a70c9c5038a6e",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    },
+    {
+      "bytes": 4224,
+      "path": "fixtures/source/workflow_configuration/Tauto_Neut (#3652)/N mesos (#3430)/Table Creator (#2158)/settings.xml",
+      "sha256": "52e77e915133920e6d7ac35968b5a69d493df16e50a95499801068fb924dc528",
+      "source": {
+        "path": "workflow_configuration/Tauto_Neut (#3652)/N mesos (#3430)/Table Creator (#2158)/settings.xml",
+        "release": "MS-ready v2.5.8, static inspection only",
+        "sha256": "52e77e915133920e6d7ac35968b5a69d493df16e50a95499801068fb924dc528",
+        "url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf"
+      }
+    }
+  ],
+  "license_context": {
+    "archive_repository": "MS-ready repository declares MIT",
+    "attribution": "kmansouri/MS-ready v2.5.8; McEachran et al. 2018, DOI 10.1186/s13321-018-0299-2",
+    "original_data": "archive README attributes source article data under CC BY 4.0 and applicable CC0 waiver; retain source attribution and terms"
+  },
+  "profile": "cosmolkit_msready_v1",
+  "profile_commitment": "Native published-concept implementation; not historical equivalence",
+  "schema_version": "1.0.0",
+  "selection": {
+    "copied_full_sample": false,
+    "copied_qsar_supplement": false,
+    "copied_xls_or_sdf": false,
+    "expected_outputs_regenerated": false,
+    "sample_lines_1_based": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "sample_record_count": 8
+  },
+  "source_archive": {
+    "asset_sha256": "042516c36088ffa8b9e9ae8e6e2e9154188cdb790c8ac3c510643bb7b01acc5c",
+    "asset_url": "https://github.com/kmansouri/MS-ready/releases/download/v2.5.8/MS-ready_2.5.8-knime_4.5.knwf",
+    "release": "MS-ready v2.5.8, static inspection only",
+    "static_inspection_only": true
+  }
+}

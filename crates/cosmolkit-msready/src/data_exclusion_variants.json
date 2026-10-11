@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "cosmolkit_msready_v1",
+  "selection_policy": "finite_explicit_comparison_templates_only_v1",
+  "variants": [
+    {"variant_id":"143_hydroxide","source_ids":["143"],"smiles":"[OH-]","source_field":"Structure(SMILES)","adaptation_id":"explicit_protonation_state_variant_v1"},
+    {"variant_id":"15_ammonium","source_ids":["15"],"smiles":"[NH4+]","source_field":"Structure(SMILES)","adaptation_id":"explicit_protonation_state_variant_v1"},
+    {"variant_id":"49_fluoride_ion","source_ids":["49"],"smiles":"[F-]","source_field":"Structure(SMILES)","adaptation_id":"hydrogen_halide_to_halide_ion_variant_v1"},
+    {"variant_id":"30_chloride_ion","source_ids":["30"],"smiles":"[Cl-]","source_field":"Structure(SMILES)","adaptation_id":"hydrogen_halide_to_halide_ion_variant_v1"},
+    {"variant_id":"24_bromide_ion","source_ids":["24"],"smiles":"[Br-]","source_field":"Structure(SMILES)","adaptation_id":"hydrogen_halide_to_halide_ion_variant_v1"},
+    {"variant_id":"65_iodide_ion","source_ids":["65"],"smiles":"[I-]","source_field":"Structure(SMILES)","adaptation_id":"hydrogen_halide_to_halide_ion_variant_v1"},
+    {"variant_id":"97_silver_cation","source_ids":["97"],"smiles":"[Ag+]","source_field":"Structure(SMILES)","adaptation_id":"archived_singleton_metal_ion_variant_v1"},
+    {"variant_id":"70_lithium_cation","source_ids":["70"],"smiles":"[Li+]","source_field":"Structure(SMILES)","adaptation_id":"archived_singleton_metal_ion_variant_v1"},
+    {"variant_id":"80_sodium_cation","source_ids":["80"],"smiles":"[Na+]","source_field":"Structure(SMILES)","adaptation_id":"archived_singleton_metal_ion_variant_v1"},
+    {"variant_id":"67_potassium_cation","source_ids":["67"],"smiles":"[K+]","source_field":"Structure(SMILES)","adaptation_id":"archived_singleton_metal_ion_variant_v1"},
+    {"variant_id":"78_magnesium_dication","source_ids":["78"],"smiles":"[Mg+2]","source_field":"Structure(SMILES)","adaptation_id":"archived_singleton_metal_ion_variant_v1"},
+    {"variant_id":"27_calcium_dication","source_ids":["27"],"smiles":"[Ca+2]","source_field":"Structure(SMILES)","adaptation_id":"archived_singleton_metal_ion_variant_v1"},
+    {"variant_id":"98_strontium_dication","source_ids":["98"],"smiles":"[Sr+2]","source_field":"Structure(SMILES)","adaptation_id":"archived_singleton_metal_ion_variant_v1"},
+    {"variant_id":"18_barium_dication","source_ids":["18"],"smiles":"[Ba+2]","source_field":"Structure(SMILES)","adaptation_id":"archived_singleton_metal_ion_variant_v1"},
+    {"variant_id":"145_zinc_dication","source_ids":["145"],"smiles":"[Zn+2]","source_field":"Structure(SMILES)","adaptation_id":"archived_singleton_metal_ion_variant_v1"},
+    {"variant_id":"14_aluminium_trication","source_ids":["14"],"smiles":"[Al+3]","source_field":"Structure(SMILES)","adaptation_id":"archived_singleton_metal_ion_variant_v1"},
+    {"variant_id":"23_bismuth_trication","source_ids":["23"],"smiles":"[Bi+3]","source_field":"Structure(SMILES)","adaptation_id":"archived_singleton_metal_ion_variant_v1"},
+    {"variant_id":"90_dihydrogen_phosphate","source_ids":["90"],"smiles":"O=P([O-])(O)O","source_field":"Structure(SMILES)","adaptation_id":"terminal_oxo_acid_proton_state_variant_v1"},
+    {"variant_id":"90_hydrogen_phosphate","source_ids":["90"],"smiles":"O=P([O-])([O-])O","source_field":"Structure(SMILES)","adaptation_id":"terminal_oxo_acid_proton_state_variant_v1"},
+    {"variant_id":"90_phosphate","source_ids":["90"],"smiles":"O=P([O-])([O-])[O-]","source_field":"Structure(SMILES)","adaptation_id":"terminal_oxo_acid_proton_state_variant_v1"},
+    {"variant_id":"100_hydrogen_sulfate","source_ids":["100"],"smiles":"O=S(=O)([O-])O","source_field":"Structure(SMILES)","adaptation_id":"terminal_oxo_acid_proton_state_variant_v1"},
+    {"variant_id":"100_sulfate","source_ids":["100"],"smiles":"O=S(=O)([O-])[O-]","source_field":"Structure(SMILES)","adaptation_id":"terminal_oxo_acid_proton_state_variant_v1"},
+    {"variant_id":"29_carbonate_monoanion","source_ids":["29","155"],"smiles":"O=C([O-])O","source_field":"Structure(SMILES)","adaptation_id":"terminal_oxo_acid_proton_state_variant_v1"},
+    {"variant_id":"29_carbonate_dianion","source_ids":["29","155"],"smiles":"O=C([O-])[O-]","source_field":"Structure(SMILES)","adaptation_id":"terminal_oxo_acid_proton_state_variant_v1"},
+    {"variant_id":"60_hypophosphite_deprotonated","source_ids":["60"],"smiles":"[O-]P=O","source_field":"Structure(SMILES)","adaptation_id":"terminal_oxo_acid_proton_state_variant_v1"},
+    {"variant_id":"58_hexafluorophosphate_anion","source_ids":["58"],"smiles":"[P-](F)(F)(F)(F)(F)F","source_field":"CANONICAL_SMILES","adaptation_id":"source_pf6_charge_variant_v1","comparison_only":true}
+  ]
+}

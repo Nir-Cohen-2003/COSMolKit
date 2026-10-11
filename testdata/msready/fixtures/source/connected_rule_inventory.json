@@ -1,0 +1,920 @@
+{
+  "workflow_release": "v2.5.8",
+  "engine_for_display_only": "1.46.0.0-gb36d38f52-x86_64-linux-gnu-11.2.1",
+  "not_an_executable_port": true,
+  "stages": [
+    {
+      "stage_order": 0,
+      "stage_id": "pre_component_disconnection",
+      "rules": [
+        {
+          "source_path": "Metanode (#1222)/MarvinSketch (#2131)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Metanode (#1222)__MarvinSketch (#2131).mrv",
+          "display_reaction_smiles_not_executable": "[*][K]>>[*].[K+] |$_R1;;_R1;$|"
+        },
+        {
+          "source_path": "Metanode (#1222)/MarvinSketch (#2135)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Metanode (#1222)__MarvinSketch (#2135).mrv",
+          "display_reaction_smiles_not_executable": "[*][Li]>>[*].[Li+] |$_R1;;_R1;$|"
+        },
+        {
+          "source_path": "Metanode (#1222)/MarvinSketch (#2136)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Metanode (#1222)__MarvinSketch (#2136).mrv",
+          "display_reaction_smiles_not_executable": "[*][Na]>>[*].[Na+] |$_R1;;_R1;$|"
+        },
+        {
+          "source_path": "Metanode (#1222)/MarvinSketch (#3215)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Metanode (#1222)__MarvinSketch (#3215).mrv",
+          "display_reaction_smiles_not_executable": "[*]S(=[*])I>>[*]S[*].[I-] |$_R1;;_R2;;_R2;;_R1;$|"
+        }
+      ]
+    },
+    {
+      "stage_order": 1,
+      "stage_id": "initial_nitro",
+      "folder": "N mesos (#3406)",
+      "transformation_node_id": null,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": [
+        {
+          "source_path": "Tauto_Neut (#3652)/N mesos (#3406)/Table Creator (#2133)/settings.xml",
+          "format": "reaction_string",
+          "raw_reaction": "[*]N(:O):O>>[O-][N+]([*])=O",
+          "local_order": 1
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/N mesos (#3406)/Table Creator (#2133)/settings.xml",
+          "format": "reaction_string",
+          "raw_reaction": "[H]ON([*])=O>>[O-][N+]([*])=O",
+          "local_order": 2
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/N mesos (#3406)/Table Creator (#2133)/settings.xml",
+          "format": "reaction_string",
+          "raw_reaction": "[*]N(=O)=O>>[O-][N+]([*])=O",
+          "local_order": 3
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/N mesos (#3406)/Table Creator (#2133)/settings.xml",
+          "format": "reaction_string",
+          "raw_reaction": "[H]ON(O)[*]>>[O-][N+]([*])=O",
+          "local_order": 4
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/N mesos (#3406)/Table Creator (#2133)/settings.xml",
+          "format": "reaction_string",
+          "raw_reaction": "[H][N]([*])(=O)=O>>[O-][N+]([*])=O",
+          "local_order": 5
+        }
+      ]
+    },
+    {
+      "stage_order": 2,
+      "stage_id": "early_conditional",
+      "folder": "Metanode (#3383)",
+      "transformation_node_id": null,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": [
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3383)/MarvinSketch (#3381)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3383)__MarvinSketch (#3381).mrv",
+          "display_reaction_smiles_not_executable": "C(=C(/[*])\\[*])(\\[*])/N([H])[*]>>N(/[*])=C(/C([*])[*])\\[*] |$;;_R4;_R2;_R1;;;_R3;;_R3;;;_R4;_R2;_R1$|",
+          "local_order": 1
+        }
+      ]
+    },
+    {
+      "stage_order": 3,
+      "stage_id": "batch_3413",
+      "folder": "Metanode (#3412)",
+      "transformation_node_id": 3413,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": [
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3412)/MarvinSketch (#343)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#343).mrv",
+          "display_reaction_smiles_not_executable": "N(=C(/[*])\\[*])/N([H])[*]>>[*]/N=N/C([*])[*] |$;;_R2;_R1;;;_R3;_R3;;;;_R2;_R1$|",
+          "local_order": 1
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3412)/MarvinSketch (#2253)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2253).mrv",
+          "display_reaction_smiles_not_executable": "[*]/C(/[*])=C(\\O[H])/[*]>>O=C(C([*])[*])[*] |$_R1;;_R2;;;;_R3;;;;_R1;_R2;_R3$|",
+          "local_order": 2
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3412)/MarvinSketch (#2136)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2136).mrv",
+          "display_reaction_smiles_not_executable": "C(#[*])O[H]>>O=C=[*] |$;_R1;;;;;_R1$|",
+          "local_order": 3
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3412)/MarvinSketch (#2150)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2150).mrv",
+          "display_reaction_smiles_not_executable": "O([H])C(C([*])=O)O[H]>>OC(C(O)[*])=O |$;;;;_R1;;;;;;;;_R1;$|",
+          "local_order": 4
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3412)/MarvinSketch (#2256)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3412)__MarvinSketch (#2256).mrv",
+          "display_reaction_smiles_not_executable": "[N-]([*])[N+]#N>>N([*])=[N+]=[N-] |$;_R1;;;;_R1;;$|",
+          "local_order": 5
+        }
+      ]
+    },
+    {
+      "stage_order": 4,
+      "stage_id": "batch_3415",
+      "folder": "Metanode (#3414)",
+      "transformation_node_id": 3415,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": [
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3414)/MarvinSketch (#2134)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3414)__MarvinSketch (#2134).mrv",
+          "display_reaction_smiles_not_executable": "[H]*1(*(C)(C)*(C)=*(C)N=*1C)*(=O)C>>[H]N1*(C)=*(*(=O)C)*(C)(C)*(C)=*1C |$;0;0;;;0;;0;;;0;;0;;;;;0;;0;0;;;0;;;0;;0;$|",
+          "local_order": 1
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3414)/MarvinSketch (#2135)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3414)__MarvinSketch (#2135).mrv",
+          "display_reaction_smiles_not_executable": "[*]C(N=O)([*])[H]>>[*]/C(=N\\O[H])/[*] |$_R2;;;;_R1;;_R2;;;;;_R1$|",
+          "local_order": 2
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3414)/MarvinSketch (#2136)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3414)__MarvinSketch (#2136).mrv",
+          "display_reaction_smiles_not_executable": "[H]OS(O[H])(=O)=N[*]>>[H]OS(=O)(=O)N=[*] |$;;;;;;;_R1;;;;;;;_R1$|",
+          "local_order": 3
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3414)/MarvinSketch (#2137)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3414)__MarvinSketch (#2137).mrv",
+          "display_reaction_smiles_not_executable": "[H]N([*])[N+]#N>>N([*])=N#N |$;;_R1;;;;_R1;;$|",
+          "local_order": 4
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3414)/MarvinSketch (#2138)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3414)__MarvinSketch (#2138).mrv",
+          "display_reaction_smiles_not_executable": "[H]N=[N+]=N[*]>>N([*])=N#N |$;;;;_R1;;_R1;;$|",
+          "local_order": 5
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3414)/MarvinSketch (#2139)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3414)__MarvinSketch (#2139).mrv",
+          "display_reaction_smiles_not_executable": "[H]N([*])([*])([*])[H]>>N([*])([*])[*] |$;;_R2;_R3;_R1;;;_R2;_R1;_R3$|",
+          "local_order": 6
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3414)/MarvinSketch (#2140)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3414)__MarvinSketch (#2140).mrv",
+          "display_reaction_smiles_not_executable": "[H]N(=[*])([*])[H]>>N(=[*])[*] |$;;_R2;_R1;;;_R2;_R1$|",
+          "local_order": 7
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3414)/MarvinSketch (#2141)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3414)__MarvinSketch (#2141).mrv",
+          "display_reaction_smiles_not_executable": "[H][N-]#[N+][*]>>N([*])=N |$;;;_R1;;_R1;$|",
+          "local_order": 8
+        }
+      ]
+    },
+    {
+      "stage_order": 5,
+      "stage_id": "batch_3417",
+      "folder": "Metanode (#3416)",
+      "transformation_node_id": 3417,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": [
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3416)/MarvinSketch (#2134)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3416)__MarvinSketch (#2134).mrv",
+          "display_reaction_smiles_not_executable": "[C]([*])[*]>>C([*])[*] |^3:0,$;_R2;_R1;;_R2;_R1$|",
+          "local_order": 1
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3416)/MarvinSketch (#2135)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3416)__MarvinSketch (#2135).mrv",
+          "display_reaction_smiles_not_executable": "[C]=[*]>>C=[*] |^3:0,$;_R1;;_R1$|",
+          "local_order": 2
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3416)/MarvinSketch (#2136)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3416)__MarvinSketch (#2136).mrv",
+          "display_reaction_smiles_not_executable": "[O][*]>>O([H])[*] |^1:0,$;_R1;;;_R1$|",
+          "local_order": 3
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3416)/MarvinSketch (#2137)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3416)__MarvinSketch (#2137).mrv",
+          "display_reaction_smiles_not_executable": "[Se][*]>>[Se]([H])[*] |^1:0,$;_R1;;;_R1$|",
+          "local_order": 4
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3416)/MarvinSketch (#2139)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3416)__MarvinSketch (#2139).mrv",
+          "display_reaction_smiles_not_executable": "[C]([*])([*])[*]>>C([*])([*])[*] |^1:0,$;_R3;_R2;_R1;;_R3;_R2;_R1$|",
+          "local_order": 5
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3416)/MarvinSketch (#2140)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3416)__MarvinSketch (#2140).mrv",
+          "display_reaction_smiles_not_executable": "[Si]([*])([*])[*]>>[SiH]([*])([*])[*] |^1:0,$;_R3;_R2;_R1;;_R3;_R2;_R1$|",
+          "local_order": 6
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3416)/MarvinSketch (#2147)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3416)__MarvinSketch (#2147).mrv",
+          "display_reaction_smiles_not_executable": "[C]=[*]>>C=[*] |^4:0,$;_R1;;_R1$|",
+          "local_order": 7
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3416)/MarvinSketch (#2266)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3416)__MarvinSketch (#2266).mrv",
+          "display_reaction_smiles_not_executable": "UNCONVERTED: CML loader: 'query type' bonds are allowed only for queries",
+          "local_order": 8
+        }
+      ]
+    },
+    {
+      "stage_order": 6,
+      "stage_id": "conditional_3418",
+      "folder": "Metanode (#3418)",
+      "transformation_node_id": null,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": []
+    },
+    {
+      "stage_order": 7,
+      "stage_id": "batch_3420",
+      "folder": "Metanode (#3419)",
+      "transformation_node_id": 3420,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": [
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3419)/MarvinSketch (#2134)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3419)__MarvinSketch (#2134).mrv",
+          "display_reaction_smiles_not_executable": "c(:[*])(:[*])[O-]>>Oc(:[*]):[*] |$;_R2;_R1;;;;_R2;_R1$|",
+          "local_order": 1
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3419)/MarvinSketch (#2135)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3419)__MarvinSketch (#2135).mrv",
+          "display_reaction_smiles_not_executable": "C(=[*])([*])[O-]>>OC(=[*])[*] |$;_R2;_R1;;;;_R2;_R1$|",
+          "local_order": 2
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3419)/MarvinSketch (#2136)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3419)__MarvinSketch (#2136).mrv",
+          "display_reaction_smiles_not_executable": "S([*])(=O)(=O)[O-]>>OS([*])(=O)=O |$;_R1;;;;;;_R1;;$|",
+          "local_order": 3
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3419)/MarvinSketch (#2137)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3419)__MarvinSketch (#2137).mrv",
+          "display_reaction_smiles_not_executable": "C(=O)([*])[O-]>>C(=O)([*])O |$;;_R1;;;;_R1;$|",
+          "local_order": 4
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3419)/MarvinSketch (#2138)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3419)__MarvinSketch (#2138).mrv",
+          "display_reaction_smiles_not_executable": "P([*])(O)(=O)[O-]>>OP([*])(=O)O |$;_R1;;;;;;_R1;;$|",
+          "local_order": 5
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3419)/MarvinSketch (#2139)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3419)__MarvinSketch (#2139).mrv",
+          "display_reaction_smiles_not_executable": "[*]#[O+]>>O=[*] |$_R1;;;_R1$|",
+          "local_order": 6
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3419)/MarvinSketch (#2140)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3419)__MarvinSketch (#2140).mrv",
+          "display_reaction_smiles_not_executable": "C([*])[O-]>>OC[*] |$;_R1;;;;_R1$|",
+          "local_order": 7
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3419)/MarvinSketch (#2141)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3419)__MarvinSketch (#2141).mrv",
+          "display_reaction_smiles_not_executable": "C([*])([*])[O-]>>OC([*])[*] |$;_R2;_R1;;;;_R2;_R1$|",
+          "local_order": 8
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3419)/MarvinSketch (#2152)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3419)__MarvinSketch (#2152).mrv",
+          "display_reaction_smiles_not_executable": "S([*])([*])([*])[O-]>>[*]S([*])([*])O |$;_R1;_R3;_R2;;_R1;;_R3;_R2;$|",
+          "local_order": 9
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3419)/MarvinSketch (#2147)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3419)__MarvinSketch (#2147).mrv",
+          "display_reaction_smiles_not_executable": "P([*])([O-])(=O)[O-]>>OP([*])(=O)O |$;_R1;;;;;;_R1;;$|",
+          "local_order": 10
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3419)/MarvinSketch (#2148)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3419)__MarvinSketch (#2148).mrv",
+          "display_reaction_smiles_not_executable": "[*][Cl-]>>[*]Cl |$_R1;;_R1;$|",
+          "local_order": 11
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3419)/MarvinSketch (#2149)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3419)__MarvinSketch (#2149).mrv",
+          "display_reaction_smiles_not_executable": "[c-]([*]):[*]>>c([*]):[*] |$;_R2;_R1;;_R2;_R1$|",
+          "local_order": 12
+        }
+      ]
+    },
+    {
+      "stage_order": 8,
+      "stage_id": "batch_3422",
+      "folder": "Metanode (#3421)",
+      "transformation_node_id": 3422,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": [
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3421)/MarvinSketch (#2134)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3421)__MarvinSketch (#2134).mrv",
+          "display_reaction_smiles_not_executable": "[CH2-][*]>>C[*] |$;_R1;;_R1$|",
+          "local_order": 1
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3421)/MarvinSketch (#2135)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3421)__MarvinSketch (#2135).mrv",
+          "display_reaction_smiles_not_executable": "[CH-]=[*]>>C=[*] |$;_R1;;_R1$|",
+          "local_order": 2
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3421)/MarvinSketch (#2136)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3421)__MarvinSketch (#2136).mrv",
+          "display_reaction_smiles_not_executable": "[C-]#[*]>>C#[*] |$;_R1;;_R1$|",
+          "local_order": 3
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3421)/MarvinSketch (#2137)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3421)__MarvinSketch (#2137).mrv",
+          "display_reaction_smiles_not_executable": "[CH-]([*])[*]>>C([*])[*] |$;_R2;_R1;;_R2;_R1$|",
+          "local_order": 4
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3421)/MarvinSketch (#2138)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3421)__MarvinSketch (#2138).mrv",
+          "display_reaction_smiles_not_executable": "[C-]([*])([*])[*]>>C([*])([*])[*] |$;_R3;_R2;_R1;;_R3;_R2;_R1$|",
+          "local_order": 5
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3421)/MarvinSketch (#2139)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3421)__MarvinSketch (#2139).mrv",
+          "display_reaction_smiles_not_executable": "[C-]([*])=[*]>>C([*])=[*] |$;_R2;_R1;;_R2;_R1$|",
+          "local_order": 6
+        }
+      ]
+    },
+    {
+      "stage_order": 9,
+      "stage_id": "batch_3424",
+      "folder": "Metanode (#3423)",
+      "transformation_node_id": 3424,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": [
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2134)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2134).mrv",
+          "display_reaction_smiles_not_executable": "[*]:[n+]([H]):[*]>>[*]:n:[*] |$_R1;;;_R2;_R1;;_R2$|",
+          "local_order": 1
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2135)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2135).mrv",
+          "display_reaction_smiles_not_executable": "[*][N+]([H])([*])[*]>>[*]N([*])[*] |$_R1;;;_R3;_R2;_R1;;_R3;_R2$|",
+          "local_order": 2
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2136)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2136).mrv",
+          "display_reaction_smiles_not_executable": "[*][N-][*]>>[*]N[*] |$_R1;;_R2;_R1;;_R2$|",
+          "local_order": 3
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2137)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2137).mrv",
+          "display_reaction_smiles_not_executable": "[*]=[N+]([H])[*]>>[*]=N[*] |$_R1;;;_R2;_R1;;_R2$|",
+          "local_order": 4
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2150)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2150).mrv",
+          "display_reaction_smiles_not_executable": "[*]N([O-])[*]>>[*]N(O)[*] |$_R1;;;_R2;_R1;;;_R2$|",
+          "local_order": 5
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2149)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2149).mrv",
+          "display_reaction_smiles_not_executable": "[*]:[n+]([H]):[*]>>[*]:n:[*] |$_R1;;;_R2;_R1;;_R2$|",
+          "local_order": 6
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2153)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2153).mrv",
+          "display_reaction_smiles_not_executable": "[*]=[N-]>>[*]=N |$_R1;;_R1;$|",
+          "local_order": 7
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2151)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2151).mrv",
+          "display_reaction_smiles_not_executable": "[*]:[n-]:[*]>>[*]:n:[*] |$_R1;;_R2;_R1;;_R2$|",
+          "local_order": 8
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2155)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2155).mrv",
+          "display_reaction_smiles_not_executable": "[As]([*])([O-])(=O)[O-]>>O[As]([*])(O)=O |$;_R1;;;;;;_R1;;$|",
+          "local_order": 9
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2158)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2158).mrv",
+          "display_reaction_smiles_not_executable": "[As]([*])(=[*])([*])[O-]>>O[As]([*])(=[*])[*] |$;_R2;_R3;_R1;;;;_R2;_R3;_R1$|",
+          "local_order": 10
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2156)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2156).mrv",
+          "display_reaction_smiles_not_executable": "S(=[*])([*])[O-]>>OS(=[*])[*] |$;_R2;_R1;;;;_R2;_R1$|",
+          "local_order": 11
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2157)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2157).mrv",
+          "display_reaction_smiles_not_executable": "P([*])(=[*])([*])[O-]>>OP([*])(=[*])[*] |$;_R2;_R3;_R1;;;;_R2;_R3;_R1$|",
+          "local_order": 12
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2165)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2165).mrv",
+          "display_reaction_smiles_not_executable": "[Si]([*])([O-])([*])[*]>>O[Si]([*])([*])[*] |$;_R2;;_R1;_R3;;;_R1;_R2;_R3$|",
+          "local_order": 13
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2168)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2168).mrv",
+          "display_reaction_smiles_not_executable": "O([*])[O-]>>[*]OO |$;_R1;;_R1;;$|",
+          "local_order": 14
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2166)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2166).mrv",
+          "display_reaction_smiles_not_executable": "C([*])([*])[O-]>>OC([*])[*] |$;_R2;_R1;;;;_R2;_R1$|",
+          "local_order": 15
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2167)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2167).mrv",
+          "display_reaction_smiles_not_executable": "c(:[*])(:[*])[O-]>>Oc(:[*]):[*] |$;_R2;_R1;;;;_R2;_R1$|",
+          "local_order": 16
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2160)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2160).mrv",
+          "display_reaction_smiles_not_executable": "P([*])([*])[O-]>>OP([*])[*] |$;_R2;_R1;;;;_R2;_R1$|",
+          "local_order": 17
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2163)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2163).mrv",
+          "display_reaction_smiles_not_executable": "C([*])([*])([*])[O-]>>OC([*])([*])[*] |$;_R3;_R2;_R1;;;;_R3;_R2;_R1$|",
+          "local_order": 18
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2161)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2161).mrv",
+          "display_reaction_smiles_not_executable": "B([*])([O-])[O-]>>B([*])(O)O |$;_R1;;;;_R1;;$|",
+          "local_order": 19
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2162)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2162).mrv",
+          "display_reaction_smiles_not_executable": "[Si]([O-])([O-])([*])[O-]>>O[Si]([*])(O)O |$;;;_R1;;;;_R1;;$|",
+          "local_order": 20
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2170)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2170).mrv",
+          "display_reaction_smiles_not_executable": "[*]=N[O-]>>[*]=NO |$_R1;;;_R1;;$|",
+          "local_order": 21
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2173)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2173).mrv",
+          "display_reaction_smiles_not_executable": "[*]=[O+][H]>>[*]=O |$_R1;;;_R1;$|",
+          "local_order": 22
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2171)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2171).mrv",
+          "display_reaction_smiles_not_executable": "C(=[*])([*])[O-]>>OC(=[*])[*] |$;_R2;_R1;;;;_R2;_R1$|",
+          "local_order": 23
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2172)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2172).mrv",
+          "display_reaction_smiles_not_executable": "[*][B-]([H])([*])[*]>>[*]B([*])[*] |$_R1;;;_R3;_R2;_R1;;_R3;_R2$|",
+          "local_order": 24
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2175)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2175).mrv",
+          "display_reaction_smiles_not_executable": "C([*])#[C-]>>C#C[*] |$;_R1;;;;_R1$|",
+          "local_order": 25
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2178)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2178).mrv",
+          "display_reaction_smiles_not_executable": "[C+]([H])([H])([*])=[*]>>[*]=C[*] |$;;;_R1;_R2;_R2;;_R1$|",
+          "local_order": 26
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2176)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2176).mrv",
+          "display_reaction_smiles_not_executable": "[*][S-]>>[*]S |$_R1;;_R1;$|",
+          "local_order": 27
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2177)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2177).mrv",
+          "display_reaction_smiles_not_executable": "S([*])[O-]>>OS[*] |$;_R1;;;;_R1$|",
+          "local_order": 28
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2180)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2180).mrv",
+          "display_reaction_smiles_not_executable": "[S+]([*])([*])[H]>>[*]S[*] |$;_R2;_R1;;_R2;;_R1$|",
+          "local_order": 29
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2183)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2183).mrv",
+          "display_reaction_smiles_not_executable": "[*][N-][*]>>[*]N[*] |$_R1;;_R2;_R1;;_R2$|",
+          "local_order": 30
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2186)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2186).mrv",
+          "display_reaction_smiles_not_executable": "S([*])(O)(=O)[O-]>>OS([*])(O)=O |$;_R1;;;;;;_R1;;$|",
+          "local_order": 31
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3423)/MarvinSketch (#2138)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3423)__MarvinSketch (#2138).mrv",
+          "display_reaction_smiles_not_executable": "[C+]([*])([*])[*]>>C([*])([*])[*] |$;_R3;_R2;_R1;;_R3;_R2;_R1$|",
+          "local_order": 32
+        }
+      ]
+    },
+    {
+      "stage_order": 10,
+      "stage_id": "batch_3426",
+      "folder": "Metanode (#3425)",
+      "transformation_node_id": 3426,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": [
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3425)/MarvinSketch (#2138)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3425)__MarvinSketch (#2138).mrv",
+          "display_reaction_smiles_not_executable": "[c+]([H])([H])(:[*]):[*]>>c(:[*]):[*] |$;;;_R2;_R1;;_R2;_R1$|",
+          "local_order": 1
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3425)/MarvinSketch (#2141)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3425)__MarvinSketch (#2141).mrv",
+          "display_reaction_smiles_not_executable": "[c+](:[*]):[*]>>c(:[*]):[*] |$;_R2;_R1;;_R2;_R1$|",
+          "local_order": 2
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3425)/MarvinSketch (#2147)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3425)__MarvinSketch (#2147).mrv",
+          "display_reaction_smiles_not_executable": "[N+]([*])(=[*])O>>[N+](=[*])([*])[O-] |$;_R1;_R2;;;_R2;_R1;$|",
+          "local_order": 3
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3425)/MarvinSketch (#2149)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3425)__MarvinSketch (#2149).mrv",
+          "display_reaction_smiles_not_executable": "[N-2][*]>>N[*] |$;_R1;;_R1$|",
+          "local_order": 4
+        }
+      ]
+    },
+    {
+      "stage_order": 11,
+      "stage_id": "batch_3428",
+      "folder": "Metanode (#3427)",
+      "transformation_node_id": 3428,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": [
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2164)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2164).mrv",
+          "display_reaction_smiles_not_executable": "[SH+]([*])(=[*])[*]>>S([*])(=[*])[*] |$;_R1;_R2;_R3;;_R1;_R2;_R3$|",
+          "local_order": 1
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2153)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2153).mrv",
+          "display_reaction_smiles_not_executable": "[S+]([*])([*])[*]>>[*][S]([*])[*] |$;_R3;_R2;_R1;_R3;;_R1;_R2$|",
+          "local_order": 2
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2185)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2185).mrv",
+          "display_reaction_smiles_not_executable": "[S+]([*])([*])([*])=[*]>>S([*])([*])([*])=[*] |$;_R3;_R2;_R1;_R4;;_R3;_R2;_R1;_R4$|",
+          "local_order": 3
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2160)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2160).mrv",
+          "display_reaction_smiles_not_executable": "[S+]([*])=[*]>>S([H])([*])=[*] |$;_R1;_R2;;;_R1;_R2$|",
+          "local_order": 4
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2190)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2190).mrv",
+          "display_reaction_smiles_not_executable": "[S+]([*])=[*]>>S([*])[*] |$;_R1;_R2;;_R2;_R1$|",
+          "local_order": 5
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2179)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2179).mrv",
+          "display_reaction_smiles_not_executable": "[P-]([*])[*]>>P([*])[*] |$;_R1;_R2;;_R1;_R2$|",
+          "local_order": 6
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2161)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2161).mrv",
+          "display_reaction_smiles_not_executable": "[Se+]([*])([*])[*]>>[*][Se]([*])[*] |$;_R3;_R2;_R1;_R3;;_R1;_R2$|",
+          "local_order": 7
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2167)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2167).mrv",
+          "display_reaction_smiles_not_executable": "[Se+]([*])=[*]>>[Se]([H])([*])=[*] |$;_R1;_R2;;;_R1;_R2$|",
+          "local_order": 8
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2168)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2168).mrv",
+          "display_reaction_smiles_not_executable": "[SeH+]([*])(=[*])[*]>>[Se]([*])(=[*])[*] |$;_R1;_R2;_R3;;_R1;_R2;_R3$|",
+          "local_order": 9
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2176)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2176).mrv",
+          "display_reaction_smiles_not_executable": "[Se-][*]>>[*][SeH] |$;_R1;_R1;$|",
+          "local_order": 10
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2155)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2155).mrv",
+          "display_reaction_smiles_not_executable": "[O-][*]>>[*]O |$;_R1;_R1;$|",
+          "local_order": 11
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2189)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2189).mrv",
+          "display_reaction_smiles_not_executable": "[O+](=[*])[*]>>O([*])[*] |$;_R2;_R1;;_R2;_R1$|",
+          "local_order": 12
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2175)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2175).mrv",
+          "display_reaction_smiles_not_executable": "UNCONVERTED: CML loader: 'query type' bonds are allowed only for queries",
+          "local_order": 13
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2194)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2194).mrv",
+          "display_reaction_smiles_not_executable": "[N+]#[N][*]>>N#[N+][*] |^1:0,1,$;;_R1;;;_R1$|",
+          "local_order": 14
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2193)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2193).mrv",
+          "display_reaction_smiles_not_executable": "[NH+]#C[*]>>N#C[*] |$;;_R1;;;_R1$|",
+          "local_order": 15
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2171)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2171).mrv",
+          "display_reaction_smiles_not_executable": "[IH+][*]>>[*]I |$;_R1;_R1;$|",
+          "local_order": 16
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2182)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2182).mrv",
+          "display_reaction_smiles_not_executable": "[Si-]([*])([*])[*]>>[SiH]([*])([*])[*] |$;_R3;_R1;_R2;;_R3;_R1;_R2$|",
+          "local_order": 17
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2184)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2184).mrv",
+          "display_reaction_smiles_not_executable": "[SiH-]([*])[*]>>[SiH2]([*])[*] |$;_R1;_R2;;_R1;_R2$|",
+          "local_order": 18
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2134)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2134).mrv",
+          "display_reaction_smiles_not_executable": "[P+]([*])([*])([*])[*]>>[*]P([*])([*])[*] |$;_R3;_R2;_R1;_R4;_R3;;_R4;_R1;_R2$|",
+          "local_order": 19
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2186)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2186).mrv",
+          "display_reaction_smiles_not_executable": "[B-]([*])[*]>>B([*])[*] |$;_R2;_R1;;_R2;_R1$|",
+          "local_order": 20
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3427)/MarvinSketch (#2188)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3427)__MarvinSketch (#2188).mrv",
+          "display_reaction_smiles_not_executable": "[B-]([*])([*])[*]>>B([*])([*])[*] |$;_R3;_R2;_R1;;_R3;_R2;_R1$|",
+          "local_order": 21
+        }
+      ]
+    },
+    {
+      "stage_order": 12,
+      "stage_id": "late_conditional",
+      "folder": "Metanode (#3429)",
+      "transformation_node_id": null,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": [
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3429)/MarvinSketch (#2171)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3429)__MarvinSketch (#2171).mrv",
+          "display_reaction_smiles_not_executable": "[C-]([*])([*])[*]>>[*]C([*])[*] |$;_R3;_R2;_R1;_R3;;_R1;_R2$|",
+          "local_order": 1
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3429)/MarvinSketch (#2176)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3429)__MarvinSketch (#2176).mrv",
+          "display_reaction_smiles_not_executable": "[*][CH-][*]>>[*][CH-][*] |$_R2;;_R1;_R1;;_R2$|",
+          "local_order": 2
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3429)/MarvinSketch (#2177)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3429)__MarvinSketch (#2177).mrv",
+          "display_reaction_smiles_not_executable": "UNCONVERTED: CML loader: 'query type' bonds are allowed only for queries",
+          "local_order": 3
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/Metanode (#3429)/MarvinSketch (#2178)/settings.xml",
+          "format": "MRV",
+          "raw_file": "mrv/Tauto_Neut (#3652)__Metanode (#3429)__MarvinSketch (#2178).mrv",
+          "display_reaction_smiles_not_executable": "UNCONVERTED: CML loader: 'query type' bonds are allowed only for queries",
+          "local_order": 4
+        }
+      ]
+    },
+    {
+      "stage_order": 13,
+      "stage_id": "final_nitro",
+      "folder": "N mesos (#3430)",
+      "transformation_node_id": null,
+      "condition_note": "Inspect saved workflow graph for guards, ports and valence bypass; order is static connection order, not a validated port.",
+      "rules": [
+        {
+          "source_path": "Tauto_Neut (#3652)/N mesos (#3430)/Table Creator (#2158)/settings.xml",
+          "format": "reaction_string",
+          "raw_reaction": "[*]N(:O):O>>[O-][N+]([*])=O",
+          "local_order": 1
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/N mesos (#3430)/Table Creator (#2158)/settings.xml",
+          "format": "reaction_string",
+          "raw_reaction": "[H]ON([*])=O>>[O-][N+]([*])=O",
+          "local_order": 2
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/N mesos (#3430)/Table Creator (#2158)/settings.xml",
+          "format": "reaction_string",
+          "raw_reaction": "[*]N(=O)=O>>[O-][N+]([*])=O",
+          "local_order": 3
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/N mesos (#3430)/Table Creator (#2158)/settings.xml",
+          "format": "reaction_string",
+          "raw_reaction": "[H]ON(O)[*]>>[O-][N+]([*])=O",
+          "local_order": 4
+        },
+        {
+          "source_path": "Tauto_Neut (#3652)/N mesos (#3430)/Table Creator (#2158)/settings.xml",
+          "format": "reaction_string",
+          "raw_reaction": "[H][N]([*])(=O)=O>>[O-][N+]([*])=O",
+          "local_order": 5
+        }
+      ]
+    }
+  ]
+}

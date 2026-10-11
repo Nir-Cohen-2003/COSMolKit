@@ -54,6 +54,7 @@ jobs:
                       cap-stereoisomers \
                       cap-reaction \
                       cap-confseq \
+                      cap-msready \
                       fingerprints \
                       depict \
                       cap-hashing \

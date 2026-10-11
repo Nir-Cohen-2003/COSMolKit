@@ -10579,5 +10579,168 @@ binding_contract! {
 {semantic_id:"Molecule.apply_reaction_",item:callable,owner:molecule,rust:crate::Molecule::apply_reaction_,python:"apply_reaction_",javascript:"applyReaction_",feature:"cap-reaction",kind:instance,receiver:mutable,parameters:[{name:reaction,type:&mut crate::Reaction,default:required}],output:bool,error:crate::OperationError,state:in_place,operation:"apply_reaction_",signature:for<'a,'b> fn(&'a mut crate::Molecule,&'b mut crate::Reaction)->Result<bool,crate::OperationError>,},
 #[cfg(feature="cap-reaction")]
 {semantic_id:"Molecule.apply_reaction_with_params_",item:callable,owner:molecule,rust:crate::Molecule::apply_reaction_with_params_,python:"apply_reaction_with_params_",javascript:"applyReactionWithParams_",feature:"cap-reaction",kind:instance,receiver:mutable,parameters:[{name:reaction,type:&mut crate::Reaction,default:required},{name:params,type:&crate::ReactionApplyParams,default:required}],output:bool,error:crate::OperationError,state:in_place,operation:"apply_reaction_with_params_",signature:for<'a,'b> fn(&'a mut crate::Molecule,&'b mut crate::Reaction,&'b crate::ReactionApplyParams)->Result<bool,crate::OperationError>,},
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyStage", item: type, owner: type_,
+            rust: crate::MsReadyStage, python: "MsReadyStage", javascript: "MsReadyStage",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyFailureKind", item: type, owner: type_,
+            rust: crate::MsReadyFailureKind, python: "MsReadyFailureKind", javascript: "MsReadyFailureKind",
+            feature: "cap-msready", status: native, role: error,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyLocation", item: type, owner: type_,
+            rust: crate::MsReadyLocation, python: "MsReadyLocation", javascript: "MsReadyLocation",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyInputLink", item: type, owner: type_,
+            rust: crate::MsReadyInputLink, python: "MsReadyInputLink", javascript: "MsReadyInputLink",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyFailure", item: type, owner: type_,
+            rust: crate::MsReadyFailure, python: "MsReadyFailure", javascript: "MsReadyFailure",
+            feature: "cap-msready", status: native, role: error,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyFailureEvidence", item: type, owner: type_,
+            rust: crate::MsReadyFailureEvidence, python: "MsReadyFailureEvidence", javascript: "MsReadyFailureEvidence",
+            feature: "cap-msready", status: native, role: error,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyParams", item: type, owner: type_,
+            rust: crate::MsReadyParams, python: "MsReadyParams", javascript: "MsReadyParams",
+            feature: "cap-msready", status: native, role: parameter,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyOriginal", item: type, owner: type_,
+            rust: crate::MsReadyOriginal, python: "MsReadyOriginal", javascript: "MsReadyOriginal",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyRunInfo", item: type, owner: type_,
+            rust: crate::MsReadyRunInfo, python: "MsReadyRunInfo", javascript: "MsReadyRunInfo",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyResult", item: type, owner: type_,
+            rust: crate::MsReadyResult, python: "MsReadyResult", javascript: "MsReadyResult",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyStatus", item: type, owner: type_,
+            rust: crate::MsReadyStatus, python: "MsReadyStatus", javascript: "MsReadyStatus",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyProduct", item: type, owner: type_,
+            rust: crate::MsReadyProduct, python: "MsReadyProduct", javascript: "MsReadyProduct",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyIdentifierDiagnostics", item: type, owner: type_,
+            rust: crate::MsReadyIdentifierDiagnostics, python: "MsReadyIdentifierDiagnostics", javascript: "MsReadyIdentifierDiagnostics",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyCompositionEntry", item: type, owner: type_,
+            rust: crate::MsReadyCompositionEntry, python: "MsReadyCompositionEntry", javascript: "MsReadyCompositionEntry",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyOrigin", item: type, owner: type_,
+            rust: crate::MsReadyOrigin, python: "MsReadyOrigin", javascript: "MsReadyOrigin",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyExclusion", item: type, owner: type_,
+            rust: crate::MsReadyExclusion, python: "MsReadyExclusion", javascript: "MsReadyExclusion",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyEventKind", item: type, owner: type_,
+            rust: crate::MsReadyEventKind, python: "MsReadyEventKind", javascript: "MsReadyEventKind",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyProtonCarrier", item: type, owner: type_,
+            rust: crate::MsReadyProtonCarrier, python: "MsReadyProtonCarrier", javascript: "MsReadyProtonCarrier",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyEvent", item: type, owner: type_,
+            rust: crate::MsReadyEvent, python: "MsReadyEvent", javascript: "MsReadyEvent",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyWarning", item: type, owner: type_,
+            rust: crate::MsReadyWarning, python: "MsReadyWarning", javascript: "MsReadyWarning",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyHydrogenDispositionKind", item: type, owner: type_,
+            rust: crate::MsReadyHydrogenDispositionKind, python: "MsReadyHydrogenDispositionKind", javascript: "MsReadyHydrogenDispositionKind",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyHydrogenDisposition", item: type, owner: type_,
+            rust: crate::MsReadyHydrogenDisposition, python: "MsReadyHydrogenDisposition", javascript: "MsReadyHydrogenDisposition",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyAtomDispositionKind", item: type, owner: type_,
+            rust: crate::MsReadyAtomDispositionKind, python: "MsReadyAtomDispositionKind", javascript: "MsReadyAtomDispositionKind",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "types.MsReadyAtomDisposition", item: type, owner: type_,
+            rust: crate::MsReadyAtomDisposition, python: "MsReadyAtomDisposition", javascript: "MsReadyAtomDisposition",
+            feature: "cap-msready", status: native, role: result,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "Molecule.with_msready", item: callable, owner: molecule,
+            rust: crate::Molecule::with_msready, python: "with_msready", javascript: "withMsready",
+            feature: "cap-msready", status: native, kind: instance, receiver: shared,
+            parameters: [], output: crate::MsReadyResult, error: crate::MsReadyFailure,
+            state: value_returning, operation: none,
+            signature: for<'a> fn(&'a crate::Molecule) -> Result<crate::MsReadyResult, crate::MsReadyFailure>,
+        },
+        #[cfg(feature = "cap-msready")]
+        {
+            semantic_id: "Molecule.with_msready_with_params", item: callable, owner: molecule,
+            rust: crate::Molecule::with_msready_with_params, python: "with_msready_with_params", javascript: "withMsreadyWithParams",
+            feature: "cap-msready", status: native, kind: instance, receiver: shared,
+            parameters: [{ name: params, type: &crate::MsReadyParams, default: required }], output: crate::MsReadyResult, error: crate::MsReadyFailure,
+            state: value_returning, operation: none,
+            signature: for<'a, 'b> fn(&'a crate::Molecule, &'b crate::MsReadyParams) -> Result<crate::MsReadyResult, crate::MsReadyFailure>,
+        },
+
     ];
 }

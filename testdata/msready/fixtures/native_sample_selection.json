@@ -1,0 +1,55 @@
+{
+  "selected_records": [
+    {
+      "line_number": 1,
+      "line_sha256": "4b2dabbc56fb7c131e0077147fe6da9f2416f316fd6f53f4bdf569b39774a420",
+      "record_id": "DTXCID606021",
+      "smiles": "[Na+].[Al+3].[O-][Si]([O-])=O.[O-][Si]([O-])=O"
+    },
+    {
+      "line_number": 2,
+      "line_sha256": "4ccaffca5f655d604e227d2d53dfc7204a9d09baf9a910d8326537b9bdbcf6fe",
+      "record_id": "22224-92-6",
+      "smiles": "CCOP(=O)(NC(C)C)OC1=CC=C(SC)C(C)=C1"
+    },
+    {
+      "line_number": 3,
+      "line_sha256": "95f6fc858a28c78f783e08d84312e89be21d264a90b7f2c75fb6894cd8eb2ad7",
+      "record_id": "63659-18-7",
+      "smiles": "CC(C)NCC(O)COC1=CC=C(CCOCC2CC2)C=C1"
+    },
+    {
+      "line_number": 4,
+      "line_sha256": "d01bd4e65d22426fb19d095e83e111c900a21f751fb07dda208d4f026434a00c",
+      "record_id": "DTXCID2032895",
+      "smiles": "C1=CC=C(C=C1)[Ge](C1=CC=CC=C1)(C1=CC=CC=C1)C1=CC=CC=C1"
+    },
+    {
+      "line_number": 5,
+      "line_sha256": "70b051b5425c10f9177c6e009bf5b70f378ca6d54cc27c79e570352b5fc41ccf",
+      "record_id": "DTXCID0031346",
+      "smiles": "O.[Zr+4].[O-]S([O-])(=O)=O.[O-]S([O-])(=O)=O"
+    },
+    {
+      "line_number": 6,
+      "line_sha256": "9a94e90b5fd5310fb70a1f7f35caf10e0bdcac419053ed7be9ae1d9f8fac8593",
+      "record_id": "DTXCID7033028",
+      "smiles": "CC(C)[Mg]Cl"
+    },
+    {
+      "line_number": 7,
+      "line_sha256": "951a5f80343f781a8b1015999c77e3141b30c3a492fabc662df41ce591a3cdd1",
+      "record_id": "108-82-7",
+      "smiles": "CC(C)CC(O)CC(C)C"
+    },
+    {
+      "line_number": 8,
+      "line_sha256": "edf01478fe0f139955896c17a0bc68fb198785dccca1f62dea9dc51359e3ed53",
+      "record_id": "DTXCID3027740",
+      "smiles": "Cl[Sm](Cl)Cl"
+    }
+  ],
+  "selection_method": "fixed one-based source line numbers; preserve complete original records",
+  "source_path": "sample_input/Sample_input.smi",
+  "source_sha256": "8ed7c503e7dfcf315e75a9d05300a4a9c6801ba5e50280cab2b8c52a37101f73"
+}

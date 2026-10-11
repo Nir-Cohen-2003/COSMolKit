@@ -65,6 +65,17 @@ mod alignment;
 mod matrices;
 mod molecule;
 mod molecule_builder;
+#[cfg(feature = "cap-msready")]
+mod msready;
+#[cfg(feature = "cap-msready")]
+pub use cosmolkit_msready::{
+    MsReadyAtomDisposition, MsReadyAtomDispositionKind, MsReadyCompositionEntry, MsReadyEvent,
+    MsReadyEventKind, MsReadyExclusion, MsReadyFailure, MsReadyFailureEvidence, MsReadyFailureKind,
+    MsReadyHydrogenDisposition, MsReadyHydrogenDispositionKind, MsReadyIdentifierDiagnostics,
+    MsReadyInputLink, MsReadyLocation, MsReadyOrigin, MsReadyOriginal, MsReadyParams,
+    MsReadyProduct, MsReadyProtonCarrier, MsReadyResult, MsReadyRunInfo, MsReadyStage,
+    MsReadyStatus, MsReadyWarning,
+};
 #[cfg(feature = "cap-reaction")]
 mod reaction;
 #[cfg(all(feature = "cap-reaction", not(feature = "cap-smiles")))]
@@ -514,3 +525,25 @@ pub use persistent_forcefields::{
     MmffForceFieldError, MmffForceFieldParams, MolecularForceField, MolecularForceFieldErrorKind,
     UffForceFieldError, UffForceFieldParams,
 };
+
+// Native rustdoc feature probes, like tests/support/feature_gate_docs.rs.
+// Each absent item is checked separately so one missing symbol cannot mask another.
+#[cfg(all(doctest, not(feature = "cap-msready")))]
+mod msready_feature_gate_docs {
+    /// ```compile_fail,E0599
+    /// let _ = cosmolkit::Molecule::with_msready;
+    /// ```
+    const WITH_MSREADY: () = ();
+    /// ```compile_fail,E0599
+    /// let _ = cosmolkit::Molecule::with_msready_with_params;
+    /// ```
+    const WITH_PARAMS: () = ();
+    /// ```compile_fail,E0432
+    /// use cosmolkit::MsReadyParams;
+    /// ```
+    const PARAMS: () = ();
+    /// ```compile_fail,E0432
+    /// use cosmolkit::MsReadyResult;
+    /// ```
+    const RESULT: () = ();
+}

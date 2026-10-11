@@ -71,6 +71,29 @@ class ReleaseBumpTests(unittest.TestCase):
                         actual.add((file, section, name))
         self.assertEqual(set(listed), actual, "stale or missing release dependency")
 
+    def test_msready_edges_move_together_without_changing_dependency_options(self):
+        owner_file = "crates/cosmolkit-msready/Cargo.toml"
+        owners = {
+            "cosmolkit-core", "cosmolkit-descriptors", "cosmolkit-inchi",
+            "cosmolkit-model", "cosmolkit-search", "cosmolkit-smiles", "cosmolkit-types",
+        }
+        original_owner = tomllib.loads(self.original[owner_file])
+        self.assertEqual(set(original_owner["dependencies"]) & owners, owners)
+        for version in ("0.5.1-rc.10", "0.5.1"):
+            with self.subTest(version=version):
+                updated = bump.prepare_updates(self.original, version)
+                for file, names in (
+                    (owner_file, owners),
+                    ("crates/cosmolkit/Cargo.toml", {"cosmolkit-msready"}),
+                ):
+                    before = tomllib.loads(self.original[file])
+                    after = tomllib.loads(updated[file])
+                    for name in names:
+                        expected = dict(before["dependencies"][name], version=version)
+                        self.assertEqual(after["dependencies"][name], expected, (file, name))
+                self.assertEqual(bump.prepare_updates(updated, version), updated)
+        self.assertEqual(self.original, {file: (ROOT / file).read_text() for file in self.original})
+
     def test_stable_version_and_idempotence(self):
         updated = bump.prepare_updates(self.original, "0.5.0")
         self.assertEqual(tomllib.loads(updated["python/pyproject.toml"])["project"]["version"], "0.5.0")

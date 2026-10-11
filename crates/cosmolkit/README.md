@@ -70,6 +70,61 @@ Feature selection does not change an enabled operation's behavior or status.
 For exact bundle membership and registry rules, see
 [Cargo feature selection](https://github.com/cosmol-studio/COSMolKit/blob/main/dev/public_api_design.md#cargo-feature-selection).
 
+## Opt-in Native MSReady
+
+`cap-msready` is an independent opt-in leaf: neither defaults, `full`, `core`
+nor any existing bundle includes it. It enables the detached owner directly,
+not public SMILES, InChI or descriptor capabilities. Use `cap-msready` or
+`full,cap-msready`; also select `cap-smiles` for SMILES construction:
+
+```sh
+cargo run -p cosmolkit --no-default-features --features cap-smiles,cap-msready --example msready
+```
+
+`mol.with_msready()` and `mol.with_msready_with_params(&MsReadyParams)` borrow
+shared input and return detached `MsReadyResult` / `MsReadyFailure` values,
+not live `Molecule` products. Input blocks and caches remain shared/unchanged
+on success and failure. Parameters provide archival metadata and resource
+limits, not alternative chemistry. `max_edits` defaults to 1,024 committed
+edits per original input, accumulated across all stages/components. By contrast,
+`max_matches_per_sweep` defaults to 4,096 candidate attempts per genuine sweep,
+not per input: all six group appearances/rematches share one group-sweep count;
+internal/reservoir proton phases/rematches share a separate proton-sweep count.
+The initial disconnection scan is its own sweep. New component/group/proton
+sweeps reset only the candidate count, never the input-wide edit count.
+Limit/cycle errors never return partial success.
+
+Profile `cosmolkit_msready_v1` / `1.0.0` is **Native**, not historical
+v2.5.8/KNIME/Indigo or EPA production equivalence. Five directed group rules
+have six appearances (initial nitro, enamine→imine, enol→carbonyl,
+ynol→ketene, azide mesomer, final nitro), followed by guarded N+/O− proton
+classes. Re-matching/fixed-point processing, H-filled R slots and isotope-aware
+ranking are explicit Native adaptations. Only the selected Li/Na/K–O cuts
+and finite covalent Hg/Sn tuples are supported; no generic metal cleanup.
+
+All 32 exact source exclusions apply standalone and in mixtures, with finite
+reviewed variants. Nitrate has exactly three comparison-only templates: raw
+`ON(=O)O` (H2NO3), `[OH][N+](=O)[O-]` and `[O-][N+](=O)[O-]`. Their catalogue
+charge/H adaptations are metadata, never analysis-graph repairs or fictitious
+proton events. Radical-observation copies handle only exact pending charged
+alkali repairs in the owner's text boundary; graph callers' radical counts
+remain unchanged. Radicals are retained/flagged, isotopes including D/T are
+preserved, and derived stereo/maps/perception carriers are physically cleared.
+
+Every eligible component and organic counterion survives; duplicates retain
+all original-row origins/mappings and multiplicity. Products carry canonical
+isotope-preserving SMILES, required real Standard InChI/full key and diagnostics,
+isotope-aware composition/formula/charge and neutral-atom formula exact mass
+(not ionic electron-corrected mass or m/z). Deduplication uses full key plus
+exact normalized SMILES. Typed failures retain original input and completed
+evidence; only genuine exclusions produce `NoEligibleComponent`.
+
+See the [complete source/support catalogue](../cosmolkit-msready/README.md)
+for guards, exact metal predicates, nitrate adaptations, provenance, source
+hashes/terms and limitations. Runtime needs no external fixtures. Python and
+JS naming projections are declared in the canonical compiler-checked Native
+registry, but actual MSReady Python/WASM bindings are **not delivered**.
+
 ## Documentation
 
 - [Rust API documentation](https://docs.rs/cosmolkit/latest/cosmolkit/) — types, methods, and module reference.

@@ -203,6 +203,7 @@ dependencies = [
  "cosmolkit-io",
  "cosmolkit-macros",
  "cosmolkit-model",
+ "cosmolkit-msready",
  "cosmolkit-reaction",
  "cosmolkit-search",
  "cosmolkit-smiles",
@@ -383,6 +384,21 @@ dependencies = [
 name = "cosmolkit-model"
 version = "0.5.0-rc.15"
 dependencies = [
+ "cosmolkit-types",
+ "serde_json",
+ "thiserror",
+]
+
+[[package]]
+name = "cosmolkit-msready"
+version = "0.5.0-rc.15"
+dependencies = [
+ "cosmolkit-core",
+ "cosmolkit-descriptors",
+ "cosmolkit-inchi",
+ "cosmolkit-model",
+ "cosmolkit-search",
+ "cosmolkit-smiles",
  "cosmolkit-types",
  "serde_json",
  "thiserror",

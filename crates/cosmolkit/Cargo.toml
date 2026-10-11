@@ -74,6 +74,7 @@ cap-forcefields = ["dep:cosmolkit-forcefields", "dep:cosmolkit-core"]
 cap-hashing = ["dep:cosmolkit-fingerprints", "dep:cosmolkit-core"]
 cap-inchi = ["dep:cosmolkit-inchi"]
 cap-io = ["dep:cosmolkit-io", "cosmolkit-io/molecule", "dep:cosmolkit-core"]
+cap-msready = ["dep:cosmolkit-msready"]
 cap-matrices = ["dep:cosmolkit-core"]
 cap-transforms = ["dep:cosmolkit-core"]
 cap-search = ["dep:cosmolkit-search", "cosmolkit-search/smiles-integration"]
@@ -110,6 +111,8 @@ cosmolkit-search = { version = "0.5.0-rc.15", path = "../cosmolkit-search", opti
 cosmolkit-smiles = { version = "0.5.0-rc.15", path = "../cosmolkit-smiles", optional = true }
 cosmolkit-stereo = { version = "0.5.0-rc.15", path = "../cosmolkit-stereo", optional = true, default-features = false }
 cosmolkit-tautomer = { version = "0.5.0-rc.15", path = "../cosmolkit-tautomer", optional = true }
+
+cosmolkit-msready = { version = "0.5.0-rc.15", path = "../cosmolkit-msready", optional = true }
 
 [dev-dependencies]
 serde_json = { version = "1", features = ["float_roundtrip"] }
@@ -366,3 +369,11 @@ required-features = ["cap-serialization"]
 [[test]]
 name = "persistent_forcefields_api"
 required-features = ["cap-forcefields", "cap-smiles", "cap-valence"]
+
+[[test]]
+name = "msready"
+required-features = ["cap-msready", "cap-smiles"]
+
+[[example]]
+name = "msready"
+required-features = ["cap-smiles", "cap-msready"]

@@ -22,6 +22,7 @@ members = [
     "crates/cosmolkit-model",
     "crates/cosmolkit-inchi",
     "crates/cosmolkit-ringdecomposer",
+    "crates/cosmolkit-msready",
     "crates/cosmolkit",
     "crates/cosmolkit-macros",
     "crates/cosmolkit-macros-old",

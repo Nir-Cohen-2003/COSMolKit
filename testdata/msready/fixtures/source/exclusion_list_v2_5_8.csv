@@ -1,0 +1,33 @@
+ID,Structure(SMILES),CANONICAL_SMILES,SALT_NAME,Formula,FW,Monoisotopic Mass
+23,[Bi],[Bi],Bismuth,Bi,208.9804,208.9804
+58,,P(F)(F)(F)(F)(F)(F),Hexafluorophosphate,F6P,144.9642,144.96418
+173,CI,CI,METHYL IODIDE,CH3I,141.939,141.927935
+18,[Ba],[Ba],Barium,Ba,137.327,137.905242
+65,I,I,Iodide,HI,127.9124,127.912285
+97,[Ag],[Ag],Silver,Ag,107.8682,106.905093
+90,O=P(O)(O)O,OP(=O)(O)O,Phosphate,H3O4P,97.9952,97.976895
+100,O=S(=O)(O)O,OS(=O)(=O)O,Sulfate,H2O4S,98.0785,97.967379
+98,[Sr],[Sr],Strontium,Sr,87.62,87.905617
+2,F[B-](F)(F)F,F[B-](F)(F)F,Tetrafluoroboranuide,BF4,86.8052,87.003467
+24,Br,Br,Bromide,HBr,80.9119,79.926155
+83,,ON(=O)O,Nitrate Uncharged,H2NO3,64.0208,64.003468
+60,O=PO,OP=O,Hypophosphite Uncharged,HO2P,63.9805,63.971415
+145,[Zn],[Zn],Zinc,Zn,65.409,63.929146
+29,O=C(O)O,OC(=O)O,Carbonate,CH2O3,62.0248,62.000394
+155,O=C(O)O,OC(O)=O,Carbonic acid,CH2O3,62.0248,62.000394
+180,[K]O,O[K],Potassium Hydroxide,HKO,56.1056,55.966447
+77,[Mg+]O,O[Mg+],Mg Monohydroxide (Looks Odd But Ok In Drug),HMgO,41.3118,40.987233
+182,[Na]O,O[Na],Sodium Hydroxide,HNaO,39.9971,39.99251
+27,[Ca],[Ca],Calcium,Ca,40.078,39.962591
+67,[K],[K],Potassium,K,39.0983,38.963707
+30,Cl,Cl,Chloride,HCl,36.4609,35.976678
+133,OO,OO,U_Peroxide,H2O2,34.0147,34.005479
+102,[S-2],[S-2],Sulphide,S,32.0661,31.973167
+14,[Al],[Al],Aluminium,Al,26.9815,26.981538
+181,[Li]O,[Li]O,Lithium Hydroxide,HLiO,23.9483,24.018744
+78,[Mg],[Mg],Magnesium,Mg,24.305,23.985042
+80,[Na],[Na],Sodium,Na,22.9898,22.98977
+49,F,F,Fluoride,HF,20.0063,20.006228
+143,O,O,Water Or Hydroxide,H2O,18.0153,18.010565
+15,N,N,Ammonia Or Ammonium,H3N,17.0305,17.026549
+70,[Li],[Li],Lithium,Li,6.941,7.016004

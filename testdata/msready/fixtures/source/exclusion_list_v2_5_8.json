@@ -1,0 +1,288 @@
+[
+  {
+    "ID": "23",
+    "Structure(SMILES)": "[Bi]",
+    "CANONICAL_SMILES": "[Bi]",
+    "SALT_NAME": "Bismuth",
+    "Formula": "Bi",
+    "FW": "208.9804",
+    "Monoisotopic Mass": "208.9804"
+  },
+  {
+    "ID": "58",
+    "CANONICAL_SMILES": "P(F)(F)(F)(F)(F)(F)",
+    "SALT_NAME": "Hexafluorophosphate",
+    "Formula": "F6P",
+    "FW": "144.9642",
+    "Monoisotopic Mass": "144.96418"
+  },
+  {
+    "ID": "173",
+    "Structure(SMILES)": "CI",
+    "CANONICAL_SMILES": "CI",
+    "SALT_NAME": "METHYL IODIDE",
+    "Formula": "CH3I",
+    "FW": "141.939",
+    "Monoisotopic Mass": "141.927935"
+  },
+  {
+    "ID": "18",
+    "Structure(SMILES)": "[Ba]",
+    "CANONICAL_SMILES": "[Ba]",
+    "SALT_NAME": "Barium",
+    "Formula": "Ba",
+    "FW": "137.327",
+    "Monoisotopic Mass": "137.905242"
+  },
+  {
+    "ID": "65",
+    "Structure(SMILES)": "I",
+    "CANONICAL_SMILES": "I",
+    "SALT_NAME": "Iodide",
+    "Formula": "HI",
+    "FW": "127.9124",
+    "Monoisotopic Mass": "127.912285"
+  },
+  {
+    "ID": "97",
+    "Structure(SMILES)": "[Ag]",
+    "CANONICAL_SMILES": "[Ag]",
+    "SALT_NAME": "Silver",
+    "Formula": "Ag",
+    "FW": "107.8682",
+    "Monoisotopic Mass": "106.905093"
+  },
+  {
+    "ID": "90",
+    "Structure(SMILES)": "O=P(O)(O)O",
+    "CANONICAL_SMILES": "OP(=O)(O)O",
+    "SALT_NAME": "Phosphate",
+    "Formula": "H3O4P",
+    "FW": "97.9952",
+    "Monoisotopic Mass": "97.976895"
+  },
+  {
+    "ID": "100",
+    "Structure(SMILES)": "O=S(=O)(O)O",
+    "CANONICAL_SMILES": "OS(=O)(=O)O",
+    "SALT_NAME": "Sulfate",
+    "Formula": "H2O4S",
+    "FW": "98.0785",
+    "Monoisotopic Mass": "97.967379"
+  },
+  {
+    "ID": "98",
+    "Structure(SMILES)": "[Sr]",
+    "CANONICAL_SMILES": "[Sr]",
+    "SALT_NAME": "Strontium",
+    "Formula": "Sr",
+    "FW": "87.62",
+    "Monoisotopic Mass": "87.905617"
+  },
+  {
+    "ID": "2",
+    "Structure(SMILES)": "F[B-](F)(F)F",
+    "CANONICAL_SMILES": "F[B-](F)(F)F",
+    "SALT_NAME": "Tetrafluoroboranuide",
+    "Formula": "BF4",
+    "FW": "86.8052",
+    "Monoisotopic Mass": "87.003467"
+  },
+  {
+    "ID": "24",
+    "Structure(SMILES)": "Br",
+    "CANONICAL_SMILES": "Br",
+    "SALT_NAME": "Bromide",
+    "Formula": "HBr",
+    "FW": "80.9119",
+    "Monoisotopic Mass": "79.926155"
+  },
+  {
+    "ID": "83",
+    "CANONICAL_SMILES": "ON(=O)O",
+    "SALT_NAME": "Nitrate Uncharged",
+    "Formula": "H2NO3",
+    "FW": "64.0208",
+    "Monoisotopic Mass": "64.003468"
+  },
+  {
+    "ID": "60",
+    "Structure(SMILES)": "O=PO",
+    "CANONICAL_SMILES": "OP=O",
+    "SALT_NAME": "Hypophosphite Uncharged",
+    "Formula": "HO2P",
+    "FW": "63.9805",
+    "Monoisotopic Mass": "63.971415"
+  },
+  {
+    "ID": "145",
+    "Structure(SMILES)": "[Zn]",
+    "CANONICAL_SMILES": "[Zn]",
+    "SALT_NAME": "Zinc",
+    "Formula": "Zn",
+    "FW": "65.409",
+    "Monoisotopic Mass": "63.929146"
+  },
+  {
+    "ID": "29",
+    "Structure(SMILES)": "O=C(O)O",
+    "CANONICAL_SMILES": "OC(=O)O",
+    "SALT_NAME": "Carbonate",
+    "Formula": "CH2O3",
+    "FW": "62.0248",
+    "Monoisotopic Mass": "62.000394"
+  },
+  {
+    "ID": "155",
+    "Structure(SMILES)": "O=C(O)O",
+    "CANONICAL_SMILES": "OC(O)=O",
+    "SALT_NAME": "Carbonic acid",
+    "Formula": "CH2O3",
+    "FW": "62.0248",
+    "Monoisotopic Mass": "62.000394"
+  },
+  {
+    "ID": "180",
+    "Structure(SMILES)": "[K]O",
+    "CANONICAL_SMILES": "O[K]",
+    "SALT_NAME": "Potassium Hydroxide",
+    "Formula": "HKO",
+    "FW": "56.1056",
+    "Monoisotopic Mass": "55.966447"
+  },
+  {
+    "ID": "77",
+    "Structure(SMILES)": "[Mg+]O",
+    "CANONICAL_SMILES": "O[Mg+]",
+    "SALT_NAME": "Mg Monohydroxide (Looks Odd But Ok In Drug)",
+    "Formula": "HMgO",
+    "FW": "41.3118",
+    "Monoisotopic Mass": "40.987233"
+  },
+  {
+    "ID": "182",
+    "Structure(SMILES)": "[Na]O",
+    "CANONICAL_SMILES": "O[Na]",
+    "SALT_NAME": "Sodium Hydroxide",
+    "Formula": "HNaO",
+    "FW": "39.9971",
+    "Monoisotopic Mass": "39.99251"
+  },
+  {
+    "ID": "27",
+    "Structure(SMILES)": "[Ca]",
+    "CANONICAL_SMILES": "[Ca]",
+    "SALT_NAME": "Calcium",
+    "Formula": "Ca",
+    "FW": "40.078",
+    "Monoisotopic Mass": "39.962591"
+  },
+  {
+    "ID": "67",
+    "Structure(SMILES)": "[K]",
+    "CANONICAL_SMILES": "[K]",
+    "SALT_NAME": "Potassium",
+    "Formula": "K",
+    "FW": "39.0983",
+    "Monoisotopic Mass": "38.963707"
+  },
+  {
+    "ID": "30",
+    "Structure(SMILES)": "Cl",
+    "CANONICAL_SMILES": "Cl",
+    "SALT_NAME": "Chloride",
+    "Formula": "HCl",
+    "FW": "36.4609",
+    "Monoisotopic Mass": "35.976678"
+  },
+  {
+    "ID": "133",
+    "Structure(SMILES)": "OO",
+    "CANONICAL_SMILES": "OO",
+    "SALT_NAME": "U_Peroxide",
+    "Formula": "H2O2",
+    "FW": "34.0147",
+    "Monoisotopic Mass": "34.005479"
+  },
+  {
+    "ID": "102",
+    "Structure(SMILES)": "[S-2]",
+    "CANONICAL_SMILES": "[S-2]",
+    "SALT_NAME": "Sulphide",
+    "Formula": "S",
+    "FW": "32.0661",
+    "Monoisotopic Mass": "31.973167"
+  },
+  {
+    "ID": "14",
+    "Structure(SMILES)": "[Al]",
+    "CANONICAL_SMILES": "[Al]",
+    "SALT_NAME": "Aluminium",
+    "Formula": "Al",
+    "FW": "26.9815",
+    "Monoisotopic Mass": "26.981538"
+  },
+  {
+    "ID": "181",
+    "Structure(SMILES)": "[Li]O",
+    "CANONICAL_SMILES": "[Li]O",
+    "SALT_NAME": "Lithium Hydroxide",
+    "Formula": "HLiO",
+    "FW": "23.9483",
+    "Monoisotopic Mass": "24.018744"
+  },
+  {
+    "ID": "78",
+    "Structure(SMILES)": "[Mg]",
+    "CANONICAL_SMILES": "[Mg]",
+    "SALT_NAME": "Magnesium",
+    "Formula": "Mg",
+    "FW": "24.305",
+    "Monoisotopic Mass": "23.985042"
+  },
+  {
+    "ID": "80",
+    "Structure(SMILES)": "[Na]",
+    "CANONICAL_SMILES": "[Na]",
+    "SALT_NAME": "Sodium",
+    "Formula": "Na",
+    "FW": "22.9898",
+    "Monoisotopic Mass": "22.98977"
+  },
+  {
+    "ID": "49",
+    "Structure(SMILES)": "F",
+    "CANONICAL_SMILES": "F",
+    "SALT_NAME": "Fluoride",
+    "Formula": "HF",
+    "FW": "20.0063",
+    "Monoisotopic Mass": "20.006228"
+  },
+  {
+    "ID": "143",
+    "Structure(SMILES)": "O",
+    "CANONICAL_SMILES": "O",
+    "SALT_NAME": "Water Or Hydroxide",
+    "Formula": "H2O",
+    "FW": "18.0153",
+    "Monoisotopic Mass": "18.010565"
+  },
+  {
+    "ID": "15",
+    "Structure(SMILES)": "N",
+    "CANONICAL_SMILES": "N",
+    "SALT_NAME": "Ammonia Or Ammonium",
+    "Formula": "H3N",
+    "FW": "17.0305",
+    "Monoisotopic Mass": "17.026549"
+  },
+  {
+    "ID": "70",
+    "Structure(SMILES)": "[Li]",
+    "CANONICAL_SMILES": "[Li]",
+    "SALT_NAME": "Lithium",
+    "Formula": "Li",
+    "FW": "6.941",
+    "Monoisotopic Mass": "7.016004"
+  }
+]

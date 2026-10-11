@@ -86,7 +86,10 @@ fn bundle_and_capability_declarations_have_exact_membership() {
         .map(String::as_str)
         .collect();
     // Public reaction bindings enable the same capability in the full bundle.
-    assert_eq!(declared, all);
+    assert_eq!(
+        declared,
+        all.iter().copied().chain(["cap-msready"]).collect()
+    );
     let mut cases = vec![
         (true, vec![], all.clone()),
         (false, vec!["full"], all.clone()),
@@ -121,6 +124,18 @@ fn bundle_and_capability_declarations_have_exact_membership() {
         CORE.iter().copied().chain(["cap-bio"]).collect(),
     ));
     assert_eq!(cases.len(), 54);
+    cases.push((
+        false,
+        vec!["cap-msready"],
+        ["cap-msready"].into_iter().collect(),
+    ));
+    cases.push((
+        false,
+        vec!["full", "cap-msready"],
+        all.iter().copied().chain(["cap-msready"]).collect(),
+    ));
+    assert!(!declared_caps(&manifest, true, &[]).contains("cap-msready"));
+    assert!(!declared_caps(&manifest, false, &["full"]).contains("cap-msready"));
     assert!(!manifest["features"].as_table().unwrap().contains_key("io"));
     assert!(!declared_caps(&manifest, false, &["core"]).contains("cap-serialization"));
     assert!(!declared_caps(&manifest, false, &["core"]).contains("cap-search"));
@@ -158,6 +173,7 @@ fn optional_dependencies_and_io_branches_stay_independent() {
         Some(false)
     );
     for (feature, expected) in [
+        ("cap-msready", &["dep:cosmolkit-msready"][..]),
         (
             "cap-bio",
             &["dep:cosmolkit-bio", "dep:cosmolkit-io", "cosmolkit-io/bio"][..],
@@ -250,6 +266,7 @@ fn enabled_registry_rows_use_capability_names_not_bundle_names() {
         ("cap-radicals", cfg!(feature = "cap-radicals")),
         ("cap-rings", cfg!(feature = "cap-rings")),
         ("cap-matrices", cfg!(feature = "cap-matrices")),
+        ("cap-msready", cfg!(feature = "cap-msready")),
         ("cap-transforms", cfg!(feature = "cap-transforms")),
         ("cap-stereo", cfg!(feature = "cap-stereo")),
         ("cap-kekulize", cfg!(feature = "cap-kekulize")),
@@ -302,6 +319,7 @@ fn selected_public_methods_are_available() {
     let _ = cosmolkit::Molecule::num_atoms;
     let _ = cosmolkit::Molecule::new;
     methods!("cap-smiles"; from_smiles);
+    methods!("cap-msready"; with_msready, with_msready_with_params);
     methods!("cap-io"; from_sdf);
     methods!("cap-hydrogens"; with_hydrogens, add_hydrogens_);
     methods!("cap-kekulize"; with_kekulized_bonds);
@@ -386,4 +404,39 @@ fn bio_constructors_and_cid_selection_work() {
     let structure = cosmolkit::BioStructure::from_pdb("HEADER    TEST\n").unwrap();
     let selection = cosmolkit::BioSelection::from_cid("//*").unwrap();
     assert!(structure.selected_atom_ids(&selection).unwrap().is_empty());
+}
+
+#[test]
+fn msready_detached_surface_is_leaf_gated_without_an_operation() {
+    for id in [
+        "types.MsReadyParams",
+        "types.MsReadyResult",
+        "Molecule.with_msready",
+        "Molecule.with_msready_with_params",
+    ] {
+        assert_eq!(
+            cosmolkit::BINDING_CONTRACT
+                .iter()
+                .any(|row| row.semantic_id == id),
+            cfg!(feature = "cap-msready"),
+            "{id}"
+        );
+    }
+    assert!(
+        !cosmolkit::MOLECULE_OPS
+            .iter()
+            .any(|op| op.method.contains("msready"))
+    );
+    #[cfg(feature = "cap-msready")]
+    {
+        let _: fn(
+            &cosmolkit::Molecule,
+        ) -> Result<cosmolkit::MsReadyResult, cosmolkit::MsReadyFailure> =
+            cosmolkit::Molecule::with_msready;
+        let _: fn(
+            &cosmolkit::Molecule,
+            &cosmolkit::MsReadyParams,
+        ) -> Result<cosmolkit::MsReadyResult, cosmolkit::MsReadyFailure> =
+            cosmolkit::Molecule::with_msready_with_params;
+    }
 }

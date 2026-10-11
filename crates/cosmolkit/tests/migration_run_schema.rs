@@ -5,6 +5,37 @@ use cosmolkit::{
     BindingOwner, BindingParameterContract, BindingTypeRole, FunctionStatus, StateModel,
 };
 
+// Frozen Native MSReady vocabulary and methods, appended after the legacy inventory.
+// This literal fixture is independent of generated metadata and includes no owner APIs.
+const MSREADY_IDS: &[&str] = &[
+    "types.MsReadyStage",
+    "types.MsReadyFailureKind",
+    "types.MsReadyLocation",
+    "types.MsReadyInputLink",
+    "types.MsReadyFailure",
+    "types.MsReadyFailureEvidence",
+    "types.MsReadyParams",
+    "types.MsReadyOriginal",
+    "types.MsReadyRunInfo",
+    "types.MsReadyResult",
+    "types.MsReadyStatus",
+    "types.MsReadyProduct",
+    "types.MsReadyIdentifierDiagnostics",
+    "types.MsReadyCompositionEntry",
+    "types.MsReadyOrigin",
+    "types.MsReadyExclusion",
+    "types.MsReadyEventKind",
+    "types.MsReadyProtonCarrier",
+    "types.MsReadyEvent",
+    "types.MsReadyWarning",
+    "types.MsReadyHydrogenDispositionKind",
+    "types.MsReadyHydrogenDisposition",
+    "types.MsReadyAtomDispositionKind",
+    "types.MsReadyAtomDisposition",
+    "Molecule.with_msready",
+    "Molecule.with_msready_with_params",
+];
+
 // Fixed public inventory of the owned force-field API, independent of generated metadata.
 const PERSISTENT_FORCEFIELD_IDS: &[&str] = &[
     "types.MolecularForceFieldErrorKind",
@@ -2182,6 +2213,9 @@ fn canonical_registry_preserves_order_and_feature_local_subsets() {
             "Molecule.apply_reaction_with_params_",
         ]);
     }
+    if cfg!(feature = "cap-msready") {
+        expected.extend_from_slice(MSREADY_IDS);
+    }
     assert_eq!(
         BINDING_CONTRACT
             .iter()
@@ -2198,6 +2232,56 @@ fn canonical_registry_preserves_order_and_feature_local_subsets() {
         BINDING_CONTRACT.len(),
         "semantic identities must be unique"
     );
+}
+
+#[test]
+fn msready_registry_is_an_exact_opt_in_native_suffix() {
+    let rows: Vec<_> = BINDING_CONTRACT
+        .iter()
+        .filter(|contract| contract.feature == "cap-msready")
+        .collect();
+    let expected = if cfg!(feature = "cap-msready") {
+        MSREADY_IDS
+    } else {
+        &[]
+    };
+    assert_eq!(
+        rows.iter().map(|row| row.semantic_id).collect::<Vec<_>>(),
+        expected
+    );
+    if !cfg!(feature = "cap-msready") {
+        for id in MSREADY_IDS {
+            assert!(BINDING_CONTRACT.iter().all(|row| row.semantic_id != *id));
+        }
+        return;
+    }
+    assert_eq!(
+        BINDING_CONTRACT[BINDING_CONTRACT.len() - MSREADY_IDS.len()..]
+            .iter()
+            .map(|row| row.semantic_id)
+            .collect::<Vec<_>>(),
+        MSREADY_IDS
+    );
+    for id in &MSREADY_IDS[..24] {
+        let row = entry(id);
+        let name = id.strip_prefix("types.").unwrap();
+        assert_eq!(row.item, BindingItem::Type);
+        assert_eq!(row.owner, BindingOwner::Type);
+        assert_eq!(row.rust_path.replace(' ', ""), format!("crate::{name}"));
+        assert_eq!(row.python_name, name);
+        assert_eq!(row.javascript_name, name);
+        assert_eq!(row.feature, "cap-msready");
+        assert_eq!(row.status, FunctionStatus::Native);
+        assert_eq!(row.callable, None);
+        let role = match *id {
+            "types.MsReadyParams" => BindingTypeRole::Parameter,
+            "types.MsReadyFailureKind"
+            | "types.MsReadyFailure"
+            | "types.MsReadyFailureEvidence" => BindingTypeRole::Error,
+            _ => BindingTypeRole::Result,
+        };
+        assert_eq!(row.type_role, Some(role), "{id}");
+    }
 }
 
 #[cfg(feature = "cap-forcefields")]
@@ -2930,28 +3014,29 @@ fn status_commitments_are_per_function_and_shared_with_registered_operations() {
                 | "MoleculeBatch.fingerprint_topological_torsion_list"
                 | "MoleculeBatch.fingerprint_topological_torsion_list_with_params"
         );
-        let expected = if native_coordinates || native_batch {
-            FunctionStatus::Native
-        } else if fuzzy {
-            FunctionStatus::Parity { reference: "RDKit" }
-        } else if matches!(
-            contract.semantic_id,
-            "Molecule.to_svg" | "Molecule.write_svg"
-        ) {
-            canonical_svg_identity_status()
-        } else if matches!(
-            contract.semantic_id,
-            "types.LigandRef"
-                | "types.TetrahedralStereo"
-                | "types.StereoReadError"
-                | "Molecule.tetrahedral_stereo"
-                | "Molecule.perceive_stereochemistry"
-                | "Molecule.find_chiral_centers"
-        ) {
-            FunctionStatus::Native
-        } else {
-            FunctionStatus::Experimental
-        };
+        let expected =
+            if native_coordinates || native_batch || MSREADY_IDS.contains(&contract.semantic_id) {
+                FunctionStatus::Native
+            } else if fuzzy {
+                FunctionStatus::Parity { reference: "RDKit" }
+            } else if matches!(
+                contract.semantic_id,
+                "Molecule.to_svg" | "Molecule.write_svg"
+            ) {
+                canonical_svg_identity_status()
+            } else if matches!(
+                contract.semantic_id,
+                "types.LigandRef"
+                    | "types.TetrahedralStereo"
+                    | "types.StereoReadError"
+                    | "Molecule.tetrahedral_stereo"
+                    | "Molecule.perceive_stereochemistry"
+                    | "Molecule.find_chiral_centers"
+            ) {
+                FunctionStatus::Native
+            } else {
+                FunctionStatus::Experimental
+            };
         assert_eq!(contract.status, expected, "{}", contract.semantic_id);
         if fuzzy {
             parity.push(contract.semantic_id);
