@@ -112,3 +112,6 @@ dev/plans/parallel/
 !/testdata/forcefields/expected/rdkit/mmff_numerical/source_literals.source.json
 !/testdata/forcefields/expected/rdkit/mmff_numerical/source_literals.tsv
 # END COSMolKit required fixed regression assets
+# pixi environments
+.pixi/*
+!.pixi/config.toml

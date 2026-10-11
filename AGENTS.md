@@ -5,6 +5,7 @@
 - Follow `dev/crate_architecture.md` for ownership, `dev/README.md` for development rules, and `dev/public_api_design.md` for public APIs.
 - Read applicable rules before working. After every context compaction, reread `dev/source_reproduction_protocol.md`. Execute each plan task's preceding Read Step; prior reading is not a substitute.
 - Use `dev/plans/crate_architecture_completion_plan.md` as the sole split-crate execution plan and ledger. Reports, experiments, and historical code are not alternative architectures or queues.
+- **Local-only MSReady exception (authorized isolated task):** The standalone MSReady pipeline task may use its dedicated task plan instead of following the sequential crate-completion ledger. This exception applies only to the isolated MSReady task/worktree; all other architecture, ownership, source-reproduction, validation, and approval rules remain in force. This exception is a local setup note only: never stage or commit this AGENTS.md edit, and perform no remote/network actions.
 - Report conflicting rules with concrete evidence and ask for clarification; do not choose weaker rules. Code comments specifying operation constraints or human approval are binding.
 
 ## Agent Authority
